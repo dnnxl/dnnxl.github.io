@@ -1,13 +1,15 @@
 const config = require('./src/config');
 
 module.exports = {
+  pathPrefix: "/",
+
   siteMetadata: {
     title: 'Danny Xie',
     description:
       'Computer Science Engineer.',
-    siteUrl: 'https://brittanychiang.com', // No trailing slash allowed!
+    siteUrl: 'https://dnnxl.github.io', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@bchiang7',
+    twitterUsername: '@',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
