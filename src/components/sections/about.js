@@ -125,7 +125,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'React', 'Eleventy', 'Vue', 'Node.js', 'WordPress'];
+  const skills = ['Python', 'Pytorch', 'PostgreSQL', 'Machine Learning', 'Node.js', 'mySQL',];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,21 +135,19 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+
+              Hello! Welcome to my profile! My name is Danny and I'm Computer Science Engineer Bachelor's Graduate, 
+              also Master Student from Costa Rica Institute of Technology. For my Bachelor's Project I was working 
+              as an intern researcher on robustness and uncertainty analysis on semi-supervised learning algorithms 
+              in deep architectures exposed by common corruptions on chest x rays inputs. 
+              Always looking to solve problems creatively. I'm interested focus on fields of software engineering and research 
+              in the areas of Artificial Intelligence, Computer Vision, Machine Learning applied in medical and biodiversity domain.
             </p>
 
             <p>
-              Fast-forward to today, and I've had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              Fast-forward to today, I have the privilege of working at{' '}
+              <a href="http://accenture.com/">a huge corporation</a>{' '} as a Data Engineer.
+              My main focus these days is to develop my professional  career as a engineer alongside my academic career. 
             </p>
 
             <p>Here are a few technologies I've been working with recently:</p>

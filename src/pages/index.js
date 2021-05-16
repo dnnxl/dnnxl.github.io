@@ -7,14 +7,15 @@ const StyledMainContainer = styled.main`
   counter-reset: section;
 `;
 
+//<Projects />
+
 const IndexPage = ({ location }) => (
   <Layout location={location}>
     <StyledMainContainer className="fillHeight">
       <Hero />
       <About />
       <Jobs />
-      <Featured />
-      <Projects />
+
       <Contact />
     </StyledMainContainer>
   </Layout>
