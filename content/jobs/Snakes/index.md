@@ -7,7 +7,5 @@ range: 'January 2020 - Today'
 url: 'http://www.icp.ucr.ac.cr/'
 ---
 
-- Development of a software solution platform to facilitate data
-acquisition for ophidian study
-- Technologies used to develop the solution includes; React, Node.js,
-Flutter, PostgreSQL and Python.
+- Development of a software solution platform to facilitate data acquisition for ophidian study
+- Technologies used to develop the solution includes; React, Node.js, Flutter, PostgreSQL and Python.

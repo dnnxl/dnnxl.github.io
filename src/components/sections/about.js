@@ -136,7 +136,8 @@ const About = () => {
           <div>
             <p>
 
-              Hello! Welcome to my profile! My name is Danny and I'm Computer Science Engineer Bachelor's Graduate, 
+              Hello! Welcome to my profile! 
+              My name is Danny and I'm Computer Science Engineer Bachelor's Graduate, 
               also Master Student from Costa Rica Institute of Technology. For my Bachelor's Project I was working 
               as an intern researcher on robustness and uncertainty analysis on semi-supervised learning algorithms 
               in deep architectures exposed by common corruptions on chest x rays inputs. 
@@ -162,7 +163,7 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/me.png"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
