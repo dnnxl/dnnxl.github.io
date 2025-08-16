@@ -16,3 +16,7 @@
 "IHTC":
   url: https://2023.ieee-ihtc.org/
   color: "#FFA500"
+
+"TEC":
+  url: https://revistas.tec.ac.cr/index.php/tec_marcha/
+  color: "#00008B"
