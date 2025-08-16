@@ -508,7 +508,7 @@ ninja.data = [{
         title: 'IEEE Xplore',
         section: 'Socials',
         handler: () => {
-          window.open("https://ieeexplore.ieee.org/author/ieeexplore.ieee.org/author/926958762977822/", "_blank");
+          window.open("https://ieeexplore.ieee.org/author/926958762977822/", "_blank");
         },
       },{
         id: 'social-orcid',
@@ -523,13 +523,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://scholar.google.com/citations?user=vipkAKEAAAAJ", "_blank");
-        },
-      },{
-        id: 'social-custom_social',
-        title: 'Custom_social',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://www.alberteinstein.com/", "_blank");
         },
       },{
       id: 'light-theme',
