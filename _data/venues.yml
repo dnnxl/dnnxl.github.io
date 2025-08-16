@@ -1,9 +1,9 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+"NeurIPS":
+  url: https://neurips.cc/Conferences/2020
   color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"CVPR":
+  url: https://cvpr.thecvf.com/
 
-"Vision":
+"BIP":
   color: "#009f36"
