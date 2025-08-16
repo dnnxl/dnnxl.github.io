@@ -511,6 +511,13 @@ ninja.data = [{
           window.open("https://ieeexplore.ieee.org/author/926958762977822/", "_blank");
         },
       },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/dnnxl", "_blank");
+        },
+      },{
         id: 'social-orcid',
         title: 'ORCID',
         section: 'Socials',
@@ -522,7 +529,7 @@ ninja.data = [{
         title: 'ResearchGate',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.researchgate.net/profile/https://www.researchgate.net/profile/Danny-Xie-Li?ev=hdr_xprf/", "_blank");
+          window.open("https://www.researchgate.net/profile/Danny-Xie-Li?ev=hdr_xprf/", "_blank");
         },
       },{
         id: 'social-scholar',
