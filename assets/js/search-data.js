@@ -440,16 +440,16 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
+            },},{id: "news-a-long-announcement-with-details",
           title: 'A long announcement with details',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+          description: "",
+          section: "News",},{id: "news-seminar-on-a-computer-vision-and-deep-learning-based-system-for-multi-object-tracking-with-drones-in-precision-agriculture-at-the-colaboratorio-nacional-de-computación-avanzada-cnca-of-centro-nacional-de-alta-tecnología-cenat",
+          title: 'Seminar on “A Computer Vision and Deep Learning-Based System for Multi-Object Tracking with...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
