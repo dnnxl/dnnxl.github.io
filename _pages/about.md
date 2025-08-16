@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href='#'>Artificial Intelligence Researcher</a> | Computer Scientist
+subtitle: <a href='#'>Artificial Intelligence Researcher</a> | Computer Scientist | Volunteer | Adventurer
 
 profile:
   align: right
