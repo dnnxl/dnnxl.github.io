@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href='#'>Artificial Intelligence Researcher</a> | Computer Scientist | Volunteer | Adventurer
+subtitle: <a href='#'>AI Researcher</a> | Computer Scientist | Volunteer | Adventurer
 
 profile:
   align: right
@@ -27,4 +27,6 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I'm a Master’s student in Computer Science with an emphasis in Artificial Intelligence at the Instituto Tecnológico de Costa Rica. My research interests focus on AI applications in biodiversity, agriculture, biomedicine, and accessibility, as well as on diffusion models and foundation models. Recently, I have been working on multiple object tracking, object detection, and pattern recognition, while also exploring the use of foundation models and large language models for domain-specific tasks.
+I’m a Master’s student in Computer Science specializing in Artificial Intelligence at the Instituto Tecnológico de Costa Rica. My research is all about putting AI to work in the real world—whether it’s helping biodiversity, boosting agriculture, supporting biomedicine, or making technology more accessible. I’m especially fascinated by diffusion models and foundation models. Lately, I’ve been diving into multiple object tracking, object detection, and pattern recognition, while also experimenting with foundation models and large language models for domain-specific tasks. At the core, my mission is simple: use AI to make a real impact.
+
+Outside the lab, you’ll probably find me hiking up a trail, exploring new corners of the world, or behind a camera trying to freeze a fleeting moment. I also enjoy writing and volunteering, fueled by an endless curiosity and a love for learning from every new experience life throws my way.
