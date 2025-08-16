@@ -440,7 +440,10 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-our-work-has-been-accepted-at-the-computer-vision-and-pattern-recognition-cvpr-latinx-workshop-in-nashville-united-state-titled-pinesort-a-simple-online-real-time-tracking-framework-for-drone-videos-in-agriculture",
+            },},{id: "news-my-work-simple-object-detection-framework-without-training-has-been-accepted-for-a-poster-presentation-at-the-eastern-european-machine-learning-summer-school-in-novi-sad-serbia",
+          title: 'My work, “Simple Object Detection Framework without Training,” has been accepted for a...',
+          description: "",
+          section: "News",},{id: "news-our-work-has-been-accepted-at-the-computer-vision-and-pattern-recognition-cvpr-latinx-workshop-in-nashville-united-state-titled-pinesort-a-simple-online-real-time-tracking-framework-for-drone-videos-in-agriculture",
           title: 'Our work has been accepted at the Computer Vision and Pattern Recognition (CVPR)...',
           description: "",
           section: "News",},{id: "news-our-work-has-been-accepted-at-the-conferencia-latinoamericana-de-informática-clei-in-valparaiso-chile-titled-squeeze-every-bit-of-insight-leveraging-few-shot-models-with-a-compact-support-set-for-domain-transfer-in-object-detection-from-pineapple-fields-for-oral-presentation",
