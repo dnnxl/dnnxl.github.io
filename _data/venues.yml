@@ -1,9 +1,14 @@
 "NeurIPS":
   url: https://neurips.cc/Conferences/2020
-  color: "#00369f"
+  color: "#6714a6"
 
 "CVPR":
   url: https://cvpr.thecvf.com/
 
 "BIP":
-  color: "#009f36"
+  color: "#14a631"
+  url: https://www.bipconference.org/
+
+"CLEI": 
+  url: https://conferencia2025.clei.org/en/home/
+  color: "#a61414"
