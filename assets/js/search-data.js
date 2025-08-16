@@ -518,6 +518,13 @@ ninja.data = [{
           window.open("https://orcid.org/0000-0003-1878-9460", "_blank");
         },
       },{
+        id: 'social-researchgate',
+        title: 'ResearchGate',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.researchgate.net/profile/https://www.researchgate.net/profile/Danny-Xie-Li?ev=hdr_xprf/", "_blank");
+        },
+      },{
         id: 'social-scholar',
         title: 'Google Scholar',
         section: 'Socials',
