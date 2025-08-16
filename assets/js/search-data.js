@@ -445,11 +445,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+            },},{id: "news-our-work-has-been-accepted-at-the-conferencia-latinoamericana-de-informática-clei-in-valparaiso-chile-titled-squeeze-every-bit-of-insight-leveraging-few-shot-models-with-a-compact-support-set-for-domain-transfer-in-object-detection-from-pineapple-fields-for-oral-presentation",
+          title: 'Our work has been accepted at the Conferencia Latinoamericana de Informática (CLEI) in...',
           description: "",
-          section: "News",},{id: "news-seminar-on-a-computer-vision-and-deep-learning-based-system-for-multi-object-tracking-with-drones-in-precision-agriculture-at-the-colaboratorio-nacional-de-computación-avanzada-cnca-of-centro-nacional-de-alta-tecnología-cenat",
-          title: 'Seminar on “A Computer Vision and Deep Learning-Based System for Multi-Object Tracking with...',
+          section: "News",},{id: "news-gave-a-seminar-on-a-computer-vision-and-deep-learning-based-system-for-multi-object-tracking-with-drones-in-precision-agriculture-at-the-colaboratorio-nacional-de-computación-avanzada-cnca-of-centro-nacional-de-alta-tecnología-cenat",
+          title: 'Gave a seminar on “A Computer Vision and Deep Learning-Based System for Multi-Object...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
