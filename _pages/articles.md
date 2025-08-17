@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /publications/preprints
-title: publications
+permalink: /articles
+title: Short Articles
 description: publications by categories in reversed chronological order
 years: [2023]
 nav: false
