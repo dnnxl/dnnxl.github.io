@@ -419,19 +419,19 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-my-work-simple-object-detection-framework-without-training-has-been-accepted-for-a-poster-presentation-at-the-eastern-european-machine-learning-summer-school-in-novi-sad-serbia",
+            },},{id: "news-my-work-simple-object-detection-framework-without-training-has-been-accepted-for-a-poster-presentation-at-the-eastern-european-machine-learning-summer-school-eeml-in-novi-sad-serbia",
           title: 'My work, “Simple Object Detection Framework without Training,” has been accepted for a...',
           description: "",
           section: "News",},{id: "news-gave-a-talk-for-the-ieee-computer-society-student-chapter-at-the-instituto-tecnológico-de-morelia-méxico-titled-how-can-computers-see-an-introduction-to-object-detection",
           title: 'Gave a talk for the IEEE Computer Society Student Chapter at the Instituto...',
           description: "",
-          section: "News",},{id: "news-our-work-has-been-accepted-at-the-computer-vision-and-pattern-recognition-cvpr-latinx-workshop-in-nashville-united-state-titled-pinesort-a-simple-online-real-time-tracking-framework-for-drone-videos-in-agriculture",
+          section: "News",},{id: "news-our-work-has-been-accepted-at-the-computer-vision-and-pattern-recognition-cvpr-latinx-workshop-in-nashville-united-states-titled-pinesort-a-simple-online-real-time-tracking-framework-for-drone-videos-in-agriculture",
           title: 'Our work has been accepted at the Computer Vision and Pattern Recognition (CVPR)...',
           description: "",
-          section: "News",},{id: "news-our-work-has-been-accepted-at-the-conferencia-latinoamericana-de-informática-clei-in-valparaiso-chile-titled-squeeze-every-bit-of-insight-leveraging-few-shot-models-with-a-compact-support-set-for-domain-transfer-in-object-detection-from-pineapple-fields-for-oral-presentation",
+          section: "News",},{id: "news-our-work-has-been-accepted-at-the-conferencia-latinoamericana-de-informática-clei-in-valparaíso-chile-titled-squeeze-every-bit-of-insight-leveraging-few-shot-models-with-a-compact-support-set-for-domain-transfer-in-object-detection-from-pineapple-fields-for-oral-presentation",
           title: 'Our work has been accepted at the Conferencia Latinoamericana de Informática (CLEI) in...',
           description: "",
-          section: "News",},{id: "news-gave-a-seminar-on-a-computer-vision-and-deep-learning-based-system-for-multi-object-tracking-with-drones-in-precision-agriculture-at-the-colaboratorio-nacional-de-computación-avanzada-cnca-of-centro-nacional-de-alta-tecnología-cenat",
+          section: "News",},{id: "news-gave-a-seminar-on-a-computer-vision-and-deep-learning-based-system-for-multi-object-tracking-with-drones-in-precision-agriculture-at-the-colaboratorio-nacional-de-computación-avanzada-cnca-of-the-centro-nacional-de-alta-tecnología-cenat",
           title: 'Gave a seminar on “A Computer Vision and Deep Learning-Based System for Multi-Object...',
           description: "",
           section: "News",},{
