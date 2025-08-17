@@ -191,7 +191,7 @@ exclude:
   - _pages/books.md
   - _pages/blog.md
   - _pages/dropdown.md
-  - _pages/articles.md
+  #- _pages/articles.md
   - purgecss.config.js
   - README.md
   - readme_preview/
