@@ -1,10 +1,10 @@
 ---
 layout: page
-permalink: /articles
+permalink: /articles/
 title: Short Articles
 description: publications by categories in reversed chronological order
-years: [2023]
-nav: false
+years: [2020, 2021, 2022, 2023, 2024]
+nav: true
 ---
 
 <div class="publications">
