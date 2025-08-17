@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "nav-volunteering",
           title: "Volunteering",
-          description: "Articles by categories in reversed chronological order.",
+          description: "Working on progress.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/volunteering/";
