@@ -9,15 +9,15 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-short-articles",
-          title: "Short Articles",
-          description: "Short articles organized by chronological order",
+  },{id: "nav-articles",
+          title: "Articles",
+          description: "Articles organized by chronological order",
           section: "Navigation",
           handler: () => {
             window.location.href = "/articles/";
           },
         },{id: "nav-blog",
-          title: "blog",
+          title: "Blog",
           description: "",
           section: "Navigation",
           handler: () => {
