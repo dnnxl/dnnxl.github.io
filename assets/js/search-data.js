@@ -9,12 +9,26 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-publications",
+  },{id: "nav-articles",
+          title: "Articles",
+          description: "Articles by categories in reversed chronological order.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/articles/";
+          },
+        },{id: "nav-publications",
           title: "Publications",
           description: "Publications by categories in reversed chronological order.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
+          },
+        },{id: "nav-volunteering",
+          title: "Volunteering",
+          description: "Articles by categories in reversed chronological order.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/volunteering/";
           },
         },{id: "nav-repositories",
           title: "Repositories",
