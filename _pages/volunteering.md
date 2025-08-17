@@ -2,7 +2,7 @@
 layout: page
 permalink: /volunteering/
 title: Volunteering
-description: Articles by categories in reversed chronological order.
+description: Working on progress.
 nav: true
 nav_order: 2
 ---
