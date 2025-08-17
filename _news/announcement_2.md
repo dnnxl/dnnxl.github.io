@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our work has been accepted at the Computer Vision and Pattern Recognition (CVPR) LatinX Workshop in Nashville, United State, titled "PineSORT: A Simple Online Real-time Tracking Framework for Drone Videos in Agriculture".
+Our work has been accepted at the [Computer Vision and Pattern Recognition (CVPR)](https://cvpr.thecvf.com/) LatinX Workshop in Nashville, United States, titled *"PineSORT: A Simple Online Real-time Tracking Framework for Drone Videos in Agriculture"*.

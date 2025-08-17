@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our work has been accepted at the Conferencia Latinoamericana de Informática (CLEI) in Valparaiso, Chile, titled "Squeeze Every Bit of Insight: Leveraging Few-shot Models with a Compact Support Set for Domain Transfer in Object Detection from Pineapple Fields" for oral presentation.
+Our work has been accepted at the [Conferencia Latinoamericana de Informática (CLEI)](https://clei.org/) in Valparaíso, Chile, titled *"Squeeze Every Bit of Insight: Leveraging Few-shot Models with a Compact Support Set for Domain Transfer in Object Detection from Pineapple Fields"* for oral presentation.
