@@ -3,7 +3,7 @@ layout: page
 permalink: /articles/
 title: Articles
 description: Articles organized by chronological order
-years: [2020, 2021, 2022, 2023, 2024]
+years: [2024]
 nav: true
 ---
 
