@@ -1,17 +1,16 @@
 {
   "basics": {
-    "name": "Albert Einstein",
+    "name": "Danny Xie",
     "label": "Scientist",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "dnnxl15@gmail.com",
+    "url": "https://dnnxl.github.io/",
+    "summary": "Computer Scientist",
     "location": {
       "address": "2712 Broadway St",
       "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
+      "city": "San Jose",
+      "countryCode": "CR",
       "region": "California"
     },
     "profiles": [
@@ -52,11 +51,11 @@
   ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
+      "institution": "Instituto Tecnológico de Costa Rica",
+      "location": "Cartago, Costa Rica",
       "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
+      "area": "Computer Science",
+      "studyType": "Bachelor",
       "startDate": "1905-01-01",
       "endDate": "1905-01-01",
       "score": "10",
@@ -75,41 +74,6 @@
     }
   ],
   "certificates": [
-    {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
-    },
-    {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
-    },
-    {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
     {
       "name": "Quantum Teleportation",
       "date": "2018-01-01",
@@ -167,27 +131,6 @@
       "releaseDate": "2021-12-31",
       "url": "https://revistas.tec.ac.cr/index.php/tec_marcha/article/view/5308",
       "summary": "This paper proposes a semi-virtual learning model for STEM education during the Covid-19 pandemic. Volunteers provide synchronous guidance to students in interactive environments supported by workshops and virtual tools, ensuring continuity of STEM learning despite social restrictions."
-    },
-    {
-      "name": "IEEE en el TEC: Contribuyendo con el avance de la ciencia y la tecnología para el beneficio de la humanidad",
-      "publisher": "Investiga. TEC",
-      "releaseDate": "2021-06-30",
-      "url": "https://revistas.tec.ac.cr/index.php/investiga/article/view/5348",
-      "summary": "This article presents the role of IEEE at the Instituto Tecnológico de Costa Rica, encouraging volunteerism as a way to advance science, technology, and human development. It emphasizes IEEE’s mission as the largest technical professional society in the world."
-    },
-    {
-      "name": "Proposal of self and semi-supervised learning for imbalanced classification of coronary heart disease tabular data",
-      "publisher": "Tecnología en Marcha",
-      "releaseDate": "2024-09-30",
-      "url": "https://revistas.tec.ac.cr/index.php/tec_marcha/article/view/7561",
-      "summary": "This article proposes self-supervised and semi-supervised learning methods to address class imbalance in coronary heart disease tabular data. The approach improves classification performance in scenarios where labeled samples are limited."
-    },
-    {
-      "name": "Proposal of an open-source accelerators library for inference of transformer networks in edge devices based on Linux",
-      "publisher": "Tecnología en Marcha",
-      "releaseDate": "2024-03-31",
-      "url": "https://revistas.tec.ac.cr/index.php/tec_marcha/article/view/7432",
-      "summary": "This work introduces an open-source accelerators library for efficient transformer inference on Linux-based edge devices. The library enables lightweight AI deployment, making transformer models more accessible in resource-constrained environments."
     }
   ],
   "skills": [
