@@ -44,13 +44,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/volunteering/";
           },
-        },{id: "nav-repositories",
-          title: "Repositories",
-          description: "Here are some of my repositories.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/repositories/";
-          },
         },{id: "nav-cv",
           title: "cv",
           description: "Explore my professional experience, education, skills, and selected projects. You can also download a PDF version using the button above",
