@@ -7,7 +7,7 @@ first_name: Danny
 middle_name: 
 last_name: Xie
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  Feel free to reach out if you’d like to collaborate, connect, or just have a conversation. I’m always open to new ideas, opportunities, and meaningful discussions.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >
