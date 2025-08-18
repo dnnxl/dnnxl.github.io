@@ -2,11 +2,11 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href='#'>AI Researcher</a>
+subtitle: <a href='#'>AI Researcher | Adventurous</a>
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: profile_photo_casual.jpg
   image_circular: false # crops the image to make it circular
   #more_info: >
   #  <p>555 your office number</p>
