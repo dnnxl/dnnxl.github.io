@@ -37,7 +37,6 @@
   "volunteer": [
     {
       "organization": "Focus Group on Artificial Intelligence for Health (FG-AI4H) ",
-      "location": "World Health Organization",
       "position": "Collaborator at Focus Group on 'Artificial Intelligence for Health'",
       "url": "https://aiaudit.org/contributors/",
       "startDate": "2020-08-01",
@@ -49,7 +48,6 @@
     },
     {
       "organization": "Centro Nacional de Alta Tecnología (CeNAT)",
-      "location": "Costa Rica",
       "position": "Course Instructor",
       "url": "https://kabre.cenat.ac.cr/bigdata2020/",
       "startDate": "2020-12-09",
@@ -62,7 +60,6 @@
     },
     {
       "organization": "IEEE",
-      "location": "Instituto Tecnológico de Costa Rica (TEC)",
       "position": "Chair of IEEE Student Branch TEC",
       "url": "https://ieee.org",
       "startDate": "2020-02-01",
@@ -76,7 +73,6 @@
     },
     {
       "organization": "IEEE Electron Devices Society",
-      "location": "Instituto Tecnológico de Costa Rica (TEC)",
       "position": "Chair of IEEE Student Branch Chapter EDS TEC",
       "url": "https://ieee-eds.org",
       "startDate": "2020-02-01",
@@ -92,7 +88,6 @@
   "education": [
     {
       "institution": "Instituto Tecnológico de Costa Rica",
-      "location": "Cartago, Costa Rica",
       "url": "https://www.uzh.ch/",
       "area": "Computer Science",
       "studyType": "Bachelor",
