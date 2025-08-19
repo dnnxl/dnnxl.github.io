@@ -419,8 +419,8 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-my-work-simple-object-detection-framework-without-training-has-been-accepted-for-a-poster-presentation-at-the-eastern-european-machine-learning-summer-school-eeml-in-novi-sad-serbia",
-          title: 'My work, “Simple Object Detection Framework without Training,” has been accepted for a...',
+            },},{id: "news-my-work-segment-anything-model-and-few-shot-models-for-object-detection-has-been-accepted-for-a-poster-presentation-at-the-eastern-european-machine-learning-summer-school-eeml-in-novi-sad-serbia",
+          title: 'My work, “Segment Anything Model and Few Shot Models for Object Detection” has...',
           description: "",
           section: "News",},{id: "news-our-work-simple-object-detection-framework-without-training-has-been-accepted-for-an-oral-presentation-at-the-6th-ieee-international-conference-on-bioinspired-processing-bip-2025-to-be-held-at-una-liberia-guanacaste",
           title: 'Our work, “Simple Object Detection Framework without Training,” has been accepted for an...',
