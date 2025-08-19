@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Danny Xie",
-    "label": "Scientist",
+    "label": "Scientist | Engineer",
     "image": "",
     "email": "dnnxl15@gmail.com",
     "url": "https://dnnxl.github.io/",
@@ -36,16 +36,15 @@
   ],
   "volunteer": [
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
+      "organization": "Focus Group on Artificial Intelligence for Health (FG-AI4H) ",
+      "location": "World Health Organization",
+      "position": "Collaborator at Focus Group on 'Artificial Intelligence for Health'",
+      "url": "https://aiaudit.org/contributors/",
+      "startDate": "2020-08-01",
+      "endDate": "2021-08-01",
+      "summary": "Collaborate in the focus group in terms to establish a standardized assessment framework for the evaluation of AI-based methods for health, diagnosis, triage or treatment decisions.",
       "highlights": [
-        "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.",
-        "Men of the year 2014 by Time magazine"
+        "Paper accepted for publication at NeurIPS: ML4H Auditing – From Paper to Practice"
       ]
     }
   ],
