@@ -46,6 +46,19 @@
       "highlights": [
         "Paper accepted for publication at NeurIPS: ML4H Auditing – From Paper to Practice"
       ]
+    },
+    {
+      "organization": "Centro Nacional de Alta Tecnología (CeNAT)",
+      "location": "Costa Rica",
+      "position": "Course Instructor",
+      "url": "https://kabre.cenat.ac.cr/bigdata2020/",
+      "startDate": "2020-12-09",
+      "endDate": "2020-12-10",
+      "summary": "Participated as a Course Instructor in the Big Data School 2020, delivering the workshop 'Machine Learning Methods and Deep Learning with Images'.",
+      "highlights": [
+        "Taught practical applications of machine learning and deep learning with image data.",
+        "Contributed to capacity building in data science within the national research and education community."
+      ]
     }
   ],
   "education": [
