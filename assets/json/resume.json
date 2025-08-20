@@ -5,13 +5,13 @@
     "image": "",
     "email": "dnnxl15@gmail.com",
     "url": "https://dnnxl.github.io/",
-    "summary": "Computer Scientist",
+    "summary": "Computer Scientist with a strong background in data science, machine learning, and deep learning applications. Experienced in research and development of AI-driven solutions, including computer vision, natural language processing, and multimodal data. Skilled in designing and implementing efficient algorithms, building scalable systems, and translating complex problems into practical solutions. Active IEEE volunteer and leader with international experience, fostering collaboration and innovation in technology communities.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
+      "address": "San José, Costa Rica",
+      "postalCode": "10109",
       "city": "San Jose",
       "countryCode": "CR",
-      "region": "California"
+      "region": "San Jose"
     },
     "profiles": [
       {
@@ -88,11 +88,11 @@
   "education": [
     {
       "institution": "Instituto Tecnológico de Costa Rica",
-      "url": "https://www.uzh.ch/",
+      "url": "https://www.tec.ac.cr/",
       "area": "Computer Science",
-      "studyType": "Bachelor",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
+      "studyType": "Bachelor in CompuTer Science",
+      "startDate": "2016-02-01",
+      "endDate": "2020-12-01",
       "score": "10",
       "courses": [
         "Theory of Relativity"
