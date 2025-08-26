@@ -421,6 +421,12 @@ website
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 
+## Imágenes de Docker
+Existen muchas tipos de imágenes algunas de ellas son:
+- Imágenes Base: Son imágenes que no tienen imágenes padre. Por ejemplo la de ubuntu o debian. 
+- Imágenes Hijas: Son imágenes que utilizan una imágen base para agregarle funcionalidad. 
+- Imágenes Oficiales: Son imágenes creadas bajo un esquema de revisión y publicación a cargo de un equipo reconocido. 
+Ejemplos de imágenes se muestra a continuación:
 
 
 La bandera **`-f`** en el comando:
