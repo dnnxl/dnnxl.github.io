@@ -249,4 +249,221 @@ Cada vez que ejecutamos `docker run`, se crea un **contenedor nuevo y efímero**
 
 Por eso el archivo no aparece cuando iniciamos un nuevo contenedor.
 
+## Crear una aplicación web
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker run -d dockersamples/static-site
+Unable to find image 'dockersamples/static-site:latest' locally
+latest: Pulling from dockersamples/static-site
+fdd5d7827f33: Pull complete 
+a3ed95caeb02: Pull complete 
+716f7a5f3082: Pull complete 
+7b10f03a0309: Pull complete 
+aff3ab7e9c39: Pull complete 
+Digest: sha256:daa686c61d7d239b7977e72157997489db49f316b9b9af3909d9f10fd28b2dec
+Status: Downloaded newer image for dockersamples/static-site:latest
+62433324d9f68c5d5291ccc6782860dd543d8ded575033c971eb338cd8c3634f
+```
+
+El comando
+
+```bash
+sudo docker run -d dockersamples/static-site
+```
+
+hizo lo siguiente:
+
+1. **`docker run`** → Le indica a Docker que ejecute un contenedor a partir de una imagen.
+2. **`-d` (detached mode)** → El contenedor se ejecuta en segundo plano, no queda la terminal bloqueada.
+3. **`dockersamples/static-site`** → Es la imagen que se usará, en este caso una imagen de ejemplo que sirve un sitio web estático (HTML/CSS).
+
+* Docker descarga la imagen `dockersamples/static-site` desde **Docker Hub** (si no estaba ya en tu máquina).
+* Crea un **contenedor nuevo** a partir de esa imagen.
+* Lo inicia en **modo demonio** (detached), lo que significa que queda corriendo en segundo plano.
+* El contenedor levanta un **servidor web simple** con el sitio estático que trae la imagen.
+
+### Verifique los contenedores que se encuentran corriendo
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED         STATUS         PORTS             NAMES
+62433324d9f6   dockersamples/static-site   "/bin/sh -c 'cd /usr…"   2 minutes ago   Up 2 minutes   80/tcp, 443/tcp   trusting_wing
+```
+
+### Detenga el contenedor y elimínelo
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker stop 62433324d9f6
+62433324d9f6
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker rm 62433324d9f6
+62433324d9f6
+```
+
+### Corra nuevamente la imagen de static-site pero esta vez defina el nombre y los parámetros adicionales.
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker run --name website -e AUTHOR="Danny" -d -P dockersamples/static-site
+f16449390e158aca8fe34dca1b740950597c3f16e9d4d90cf0fd3da037b9f8b2
+```
+
+Perfecto 🚀 Vamos a desglosar el comando:
+
+```bash
+sudo docker run --name website -e AUTHOR="Danny" -d -P dockersamples/static-site
+```
+
+1. **`docker run`**
+   Indica a Docker que ejecute un nuevo contenedor a partir de una imagen especificada.
+
+2. **`--name website`**
+   Le asigna un **nombre identificador** al contenedor (`website`). Esto facilita gestionarlo más adelante (ejemplo: `docker stop website`, `docker rm website`).
+
+   * Si no se usa, Docker le asigna un nombre aleatorio.
+
+3. **`-e AUTHOR="Danny"`**
+   Define una **variable de entorno** dentro del contenedor:
+
+   * `AUTHOR` es la clave.
+   * `"Danny"` es el valor.
+     Esto puede ser usado por la aplicación dentro del contenedor para mostrar información o modificar su comportamiento.
+
+4. **`-d`**
+   Modo **detached**: ejecuta el contenedor en segundo plano (no bloquea la terminal).
+
+   * Si no se usa, el contenedor se ejecuta en modo interactivo adjunto.
+
+5. **`-P`**
+   Publica los **puertos expuestos** por la imagen en **puertos aleatorios disponibles** del host.
+
+   * Ejemplo: si la imagen expone el puerto 80, Docker puede mapearlo a `32768` en el host.
+   * Se puede verificar con `docker ps` qué puerto fue asignado.
+
+6. **`dockersamples/static-site`**
+   Es la **imagen de Docker** que se usará para crear el contenedor. En este caso, es una imagen oficial de muestra que levanta un sitio web estático.
+
+---
+
+### Obtenga los puertos del host asociados a los del contenedor
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker port website
+80/tcp -> 0.0.0.0:32768
+80/tcp -> [::]:32768
+443/tcp -> 0.0.0.0:32769
+443/tcp -> [::]:32769
+```
+---
+
+### Corra un segundo webserver, pero especificando los mapeos de puerto
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker run --name sitio2 -e AUTHOR="nombr" -d -p 8888:80 dockersamples/static-site
+68b052d03e452046df1898af54bf1dac67882f99a3f7aac961e490aa868e7a17
+```
+---
+
+### Diferencia entre -p -P
+La diferencia está en **cómo se publican los puertos**:
+
+---
+
+### **`-P` (mayúscula)**
+
+* Publica **todos los puertos expuestos** en la imagen **de forma automática**.
+* Docker asigna un puerto **aleatorio disponible** en el host a cada puerto expuesto del contenedor.
+* Ejemplo:
+
+  ```bash
+  docker run -d -P dockersamples/static-site
+  ```
+
+  Si la imagen expone el puerto `80`, Docker podría asignarlo al `32768` en el host.
+  Se verifica con:
+
+  ```bash
+  docker ps
+  ```
+
+  → mostrará algo como: `0.0.0.0:32768->80/tcp`.
+
+---
+
+### **`-p` (minúscula)**
+
+* Permite **especificar manualmente** el mapeo de puertos entre el host y el contenedor.
+* Sintaxis:
+
+  ```bash
+  -p <puerto_host>:<puerto_contenedor>
+  ```
+* Ejemplo:
+
+  ```bash
+  docker run -d -p 8080:80 dockersamples/static-site
+  ```
+
+  Aquí el puerto `80` del contenedor queda disponible en `http://localhost:8080`.
+
+---
+
+### Rlimine los sitios creados
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED         STATUS         PORTS                                                                                    NAMES
+68b052d03e45   dockersamples/static-site   "/bin/sh -c 'cd /usr…"   6 minutes ago   Up 6 minutes   443/tcp, 0.0.0.0:8888->80/tcp, [::]:8888->80/tcp                                         sitio2
+f16449390e15   dockersamples/static-site   "/bin/sh -c 'cd /usr…"   9 minutes ago   Up 9 minutes   0.0.0.0:32768->80/tcp, [::]:32768->80/tcp, 0.0.0.0:32769->443/tcp, [::]:32769->443/tcp   website
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker stop sitio2
+sitio2
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker stop website
+website
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker rm sitio2
+sitio2
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker rm website
+website
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+
+
+
+La bandera **`-f`** en el comando:
+
+```bash
+docker rm -f sitio2
+```
+
+significa **“force”** (forzar). Su función es:
+
+* **Forzar la eliminación de un contenedor** aunque esté **en ejecución**.
+* Sin `-f`, Docker no permite eliminar un contenedor que esté activo; primero tendrías que detenerlo (`docker stop sitio2`).
+* Con `-f`, Docker automáticamente **detiene y elimina** el contenedor en un solo paso.
+
+---
+
+🔹 Ejemplo:
+
+```bash
+docker ps
+# Contenedor "sitio2" está corriendo
+docker rm sitio2
+# Error: contenedor en ejecución
+docker rm -f sitio2
+# El contenedor se detiene y se elimina
+```
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker rm sitio2
+Error response from daemon: cannot remove container "sitio2": container is running: stop the container before removing or force remove
+```
+
+
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker rm -f sitio2
+sitio2
+
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+
+
+
+
+
+
 
