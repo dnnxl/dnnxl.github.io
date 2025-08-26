@@ -160,13 +160,93 @@ That will drop you into a shell inside the Alpine container.
 ---
 
 
+### Mostrar los contenedores que están corriendo.
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
 
 
+### Mostrar todos los contenedores.
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker ps -a
+CONTAINER ID   IMAGE         COMMAND     CREATED          STATUS                      PORTS     NAMES
+d1dadbcf6de7   alpine        "/bin/sh"   5 minutes ago    Exited (0) 5 minutes ago              practical_booth
+7d4fe0fa42eb   alpine        "ls -l"     6 minutes ago    Exited (0) 6 minutes ago              friendly_black
+426ddb5e5bb7   hello-world   "/hello"    15 minutes ago   Exited (0) 15 minutes ago             xenodochial_galois
+80c366c0ab09   hello-world   "/hello"    7 weeks ago      Exited (0) 7 weeks ago                nostalgic_varahamihira
+```
+
+### Utilizar una sesión interactiva
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker run -it alpine /bin/sh
+/ # ls
+bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # uname -a
+Linux 78b760c7da3c 6.14.0-28-generic #28~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul 25 10:47:01 UTC 2 x86_64 Linux
+/ # 
+```
+
+### EL usuario es root
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker run -it alpine /bin/sh
+/ # ls
+bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # uname -a
+Linux 78b760c7da3c 6.14.0-28-generic #28~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul 25 10:47:01 UTC 2 x86_64 Linux
+/ # whoami
+root
+/ # id
+uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),11(floppy),20(dialout),26(tape),27(video)
+/ # 
+```
+
+### Creación del archivo
+El archivo se crea correctamente y pertenece al usuario root.
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker run -it alpine /bin/sh
+/ # ls
+bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # uname -a
+Linux 78b760c7da3c 6.14.0-28-generic #28~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul 25 10:47:01 UTC 2 x86_64 Linux
+/ # whoami
+root
+/ # id
+uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),11(floppy),20(dialout),26(tape),27(video)
+/ # touch /tmp/miarchivo
+/ # ls
+bin    dev    etc    home   lib    media  mnt    opt    proc   root   run    sbin   srv    sys    tmp    usr    var
+/ # ls -lah /tmp/miarchivo
+-rw-r--r--    1 root     root           0 Aug 26 22:27 /tmp/miarchivo
+/ # 
+```
 
 
+### Termine la sesión interactiva con el contenedor y verifique el archivo
 
+Para salir:
 
+```bash
+exit
+```
 
+Luego, si volvemos a iniciar un contenedor nuevo con:
 
+```bash
+docker run -it alpine /bin/sh
+ls -lah /tmp/miarchivo
+```
+
+El archivo ya no está.
+
+Cada vez que ejecutamos `docker run`, se crea un **contenedor nuevo y efímero** a partir de la imagen base (`alpine`).
+
+* La imagen es inmutable.
+* El sistema de archivos del contenedor solo existe mientras el contenedor está corriendo.
+* Cuando se detiene y se elimina el contenedor, los cambios (como el archivo `/tmp/miarchivo`) se pierden.
+
+Por eso el archivo no aparece cuando iniciamos un nuevo contenedor.
 
 
