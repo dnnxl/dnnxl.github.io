@@ -473,3 +473,70 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 
 
+## Imágenes de Docker
+Existen muchas tipos de imágenes algunas de ellas son:
+Imágenes Base: Son imágenes que no tienen imágenes padre. Por ejemplo la de ubuntu o debian. 
+Imágenes Hijas: Son imágenes que utilizan una imágen base para agregarle funcionalidad. 
+Imágenes Oficiales: Son imágenes creadas bajo un esquema de revisión y publicación a cargo de un equipo reconocido. 
+Ejemplos de imágenes se muestra a continuación:
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker images
+REPOSITORY                  TAG       IMAGE ID       CREATED        SIZE
+alpine                      latest    9234e8fb04c4   6 weeks ago    8.31MB
+muefab/genie                latest    1972e8cfe45e   3 months ago   244MB
+hello-world                 latest    74cc54e27dc4   7 months ago   10.1kB
+dockersamples/static-site   latest    f589ccde7957   9 years ago    191MB
+```
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker pull ubuntu:20.04
+20.04: Pulling from library/ubuntu
+13b7e930469f: Pull complete 
+Digest: sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214
+Status: Downloaded newer image for ubuntu:20.04
+docker.io/library/ubuntu:20.04
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker pull ubuntu
+Using default tag: latest
+latest: Pulling from library/ubuntu
+b71466b94f26: Pull complete 
+Digest: sha256:7c06e91f61fa88c08cc74f7e1b7c69ae24910d745357e0dfe1d2c0322aaf20f9
+Status: Downloaded newer image for ubuntu:latest
+docker.io/library/ubuntu:latest
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
