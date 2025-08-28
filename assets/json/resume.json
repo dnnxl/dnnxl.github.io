@@ -23,14 +23,17 @@
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
+      "name": "Language Sciences Faculty, Costa Rica Institute of Technology",
+      "position": "Research Assistant",
       "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
+      "startDate": "2025-02-01",
+      "endDate": "2025-12-01",
+      "summary": "Solely responsible for developing algorithms and experimenting with instruction-based large language models for Spanish text simplification and text complexity assessment using deep learning and LLMs. Conducted research, drafted papers, and effectively communicated results.",
       "highlights": [
-        "Relativity"
+        "Large Language Models",
+        "Natural Language Processing",
+        "Foundational Models",
+        "Prompt Engineering"
       ]
     }
   ],
