@@ -124,13 +124,40 @@
     {
       "institution": "Instituto Tecnológico de Costa Rica",
       "url": "https://www.tec.ac.cr/",
-      "area": "Computer Science",
-      "studyType": "Bachelor in CompuTer Science",
+      "area": "Computer Science and Software Engineering",
+      "studyType": "Bachelor's Degree",
       "startDate": "2016-02-01",
       "endDate": "2020-12-01",
-      "score": "10",
+      "score": "",
       "courses": [
-        "Theory of Relativity"
+        "Computational Molecular Biology",
+        "Operating Systems",
+        "Statistics",
+        "Probability",
+        "Discrete Mathematics",
+        "Calculus",
+        "Database Systems"
+      ]
+    }
+
+    {
+      "institution": "Instituto Tecnológico de Costa Rica",
+      "url": "https://www.tec.ac.cr/",
+      "area": "Computer Science",
+      "studyType": "Master of Science (MS)",
+      "startDate": "2023-02-01",
+      "endDate": "2025-11-01",
+      "score": "",
+      "courses": [
+        "Machine Learning",
+        "Optimization",
+        "Natural Language Processing",
+        "Data Visualization",
+        "Experimental Design",
+        "Introduction to Research",
+        "Advanced Operating Systems",
+        "Automata Theory",
+        "Deep Learning"
       ]
     }
   ],
