@@ -430,7 +430,10 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-my-work-segment-anything-model-and-few-shot-models-for-object-detection-has-been-accepted-for-a-poster-presentation-at-the-eastern-european-machine-learning-summer-school-eeml-in-novi-sad-serbia",
+            },},{id: "news-at-the-centro-nacional-de-alta-tecnología-cenat-i-served-as-a-course-instructor-for-the-big-data-school-2020-where-i-delivered-the-workshop-machine-learning-methods-and-deep-learning-with-images-teaching-practical-applications-of-these-techniques-with-image-data-and-contributing-to-capacity-building-in-data-science-within-the-national-research-and-education-community",
+          title: 'At the Centro Nacional de Alta Tecnología (CeNAT), I served as a Course...',
+          description: "",
+          section: "News",},{id: "news-my-work-segment-anything-model-and-few-shot-models-for-object-detection-has-been-accepted-for-a-poster-presentation-at-the-eastern-european-machine-learning-summer-school-eeml-in-novi-sad-serbia",
           title: 'My work, “Segment Anything Model and Few Shot Models for Object Detection” has...',
           description: "",
           section: "News",},{id: "news-our-work-simple-object-detection-framework-without-training-has-been-accepted-for-an-oral-presentation-at-the-6th-ieee-international-conference-on-bioinspired-processing-bip-2025-to-be-held-at-una-liberia-guanacaste",
