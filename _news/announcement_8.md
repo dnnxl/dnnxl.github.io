@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-At the [Centro Nacional de Alta Tecnología (CeNAT)](https://www.cenat.ac.cr/en/), I served as a **Course Instructor** for the [Big Data School 2020](https://www.redconare.ac.cr/en/crbds2020/), where I delivered the workshop *"Machine Learning Methods and Deep Learning with Images"*, teaching practical applications of these techniques with image data and contributing to capacity building in data science within the national research and education community.
+At [Centro Nacional de Alta Tecnología (CeNAT)](https://www.cenat.ac.cr/en/), I was a **Course Instructor** for for [Big Data School 2020](https://www.redconare.ac.cr/en/crbds2020/), delivering a workshop on machine learning and deep learning with images, and helping build data science capacity in the national research community.
