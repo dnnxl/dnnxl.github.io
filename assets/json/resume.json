@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Danny Xie",
-    "label": "Scientist | Engineer",
+    "label": "AI Scientist | Engineer",
     "image": "",
     "email": "dnnxl15@gmail.com",
     "url": "https://dnnxl.github.io/",
@@ -48,6 +48,24 @@
         "Video and Image Analysis",
         "Unmanned Aerial Vehicles (UAVs)",
         "Precision Agriculture"
+      ]
+    },
+    {
+      "name": "Accenture AI",
+      "position": "Data Scientist",
+      "url": "https://www.accenture.com/cn-en/services/data-ai",
+      "startDate": "2021-05-05",
+      "endDate": "2024-03-05",
+      "summary": "Developed scalable search and classification systems for e-commerce, including a Python-based Search API with Elasticsearch and a multimodal product hierarchy classification engine leveraging text and image embeddings. Conducted search quality analysis using statistical methods, topic modeling, and clustering to improve retrieval performance. Tech stack: Azure ML, AWS SageMaker, Google Cloud Vertex AI, PyTorch, TensorFlow, ElasticSearch, OpenSearch, Hugging Face, Sentence Transformers.",
+      "highlights": [
+        "E-commerce Search API Development",
+        "Elasticsearch Integration & Query Optimization",
+        "Product Hierarchy Classification Engine",
+        "Multimodal Text and Image Embeddings",
+        "Search Engine Quality Analysis",
+        "Statistical Analysis & Clustering",
+        "Cloud Platforms: Azure, AWS, Google Cloud",
+        "Deep Learning with PyTorch & TensorFlow"
       ]
     }
   ],
