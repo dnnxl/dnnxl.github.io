@@ -71,14 +71,14 @@
   ],
   "volunteer": [
     {
-      "organization": "Focus Group on Artificial Intelligence for Health (FG-AI4H) ",
-      "position": "Collaborator at Focus Group on 'Artificial Intelligence for Health'",
+      "organization": "Focus Group on Artificial Intelligence for Health (FG-AI4H)",
+      "position": "Collaborator",
       "url": "https://aiaudit.org/contributors/",
       "startDate": "2020-08-01",
       "endDate": "2021-08-01",
-      "summary": "Collaborate in the focus group in terms to establish a standardized assessment framework for the evaluation of AI-based methods for health, diagnosis, triage or treatment decisions.",
+      "summary": "Collaborated in establishing a standardized framework for evaluating AI-based methods in healthcare, including diagnosis, triage, and treatment decision support.",
       "highlights": [
-        "Paper accepted for publication at NeurIPS: ML4H Auditing – From Paper to Practice"
+        "Co-authored a paper accepted at NeurIPS: ML4H Auditing – From Paper to Practice"
       ]
     },
     {
@@ -87,36 +87,76 @@
       "url": "https://kabre.cenat.ac.cr/bigdata2020/",
       "startDate": "2020-12-09",
       "endDate": "2020-12-10",
-      "summary": "Participated as a Course Instructor in the Big Data School 2020, delivering the workshop 'Machine Learning Methods and Deep Learning with Images'.",
+      "summary": "Delivered a workshop on 'Machine Learning Methods and Deep Learning with Images' as part of the Big Data School 2020.",
       "highlights": [
-        "Taught practical applications of machine learning and deep learning with image data.",
-        "Contributed to capacity building in data science within the national research and education community."
+        "Taught practical applications of machine learning and deep learning with image data",
+        "Contributed to capacity building in data science within the national research and education community"
       ]
     },
     {
-      "organization": "Institute of Electrical and Electronics Engineers",
-      "position": "Chair of IEEE Student Branch TEC",
+      "organization": "IEEE",
+      "position": "Chair, Student Branch TEC",
       "url": "https://ieee.org",
       "startDate": "2020-02-01",
       "endDate": "2022-01-31",
-      "summary": "Served as Chair of the IEEE Student Branch at TEC, leading initiatives to promote the advancement of technology for the benefit of humanity through projects and activities.",
+      "summary": "Served as Chair of the IEEE Student Branch at TEC, leading projects and initiatives to advance technology and student engagement.",
       "highlights": [
-        "Organized activities to engage engineering and non-engineering students in STEAM fields.",
-        "Promoted student involvement in technical processes and professional development opportunities.",
-        "Fostered collaboration within the IEEE community at local and regional levels."
+        "Organized STEAM activities for engineering and non-engineering students",
+        "Promoted student involvement in technical and professional development opportunities",
+        "Strengthened collaboration within the IEEE community at local and regional levels"
       ]
     },
     {
       "organization": "IEEE Electron Devices Society",
-      "position": "Chair of IEEE Student Branch Chapter EDS TEC",
+      "position": "Chair, Student Branch Chapter EDS TEC",
       "url": "https://ieee-eds.org",
       "startDate": "2020-02-01",
       "endDate": "2021-01-31",
-      "summary": "Served as Chair of the IEEE Student Branch Chapter EDS at TEC, promoting the advancement of technology in Electron Devices and Computing through student-led initiatives and activities.",
+      "summary": "Chaired the IEEE Student Branch Chapter EDS at TEC, fostering student initiatives in electron devices and computing.",
       "highlights": [
-        "Organized events and projects to engage students in Electron Devices and Computing.",
-        "Encouraged participation from both engineering and non-engineering students in STEAM fields.",
-        "Strengthened student involvement in technical and professional development within the IEEE EDS community."
+        "Organized events and projects to engage students in electron devices and computing",
+        "Encouraged STEAM participation from engineering and non-engineering students",
+        "Enhanced student involvement in IEEE EDS technical and professional activities"
+      ]
+    },
+    {
+      "organization": "IEEE",
+      "position": "Chair, Student Activities Committee – Costa Rica Section",
+      "url": "https://students.ieee.org/student-branches/the-ieee-student-activities-committee-sac/",
+      "startDate": "2022-05-01",
+      "endDate": "2023-12-31",
+      "summary": "Led the IEEE Student Activities Committee in Costa Rica, advancing student engagement, leadership, and collaboration across universities.",
+      "highlights": [
+        "Coordinated nationwide initiatives to strengthen student participation in IEEE",
+        "Promoted leadership and professional development opportunities",
+        "Encouraged collaboration among student branches and affinity groups"
+      ]
+    },
+    {
+      "organization": "IEEE",
+      "position": "Student Representative, Region 9 (Latin America)",
+      "url": "https://students.ieee.org/student-branches/the-ieee-student-activities-committee-sac/",
+      "startDate": "2023-12-01",
+      "endDate": "2024-12-31",
+      "summary": "Elected Student Representative for IEEE Region 9, advocating for students across Latin America within the IEEE Student Activities Committee (SAC).",
+      "highlights": [
+        "Represented Latin American student interests in global IEEE forums",
+        "Collaborated with regional leaders to strengthen student branches and chapters",
+        "Promoted networking, leadership, and professional development opportunities",
+        "Supported initiatives to expand student participation in IEEE conferences and activities"
+      ]
+    },
+    {
+      "organization": "IEEE Signal Processing Society",
+      "position": "Chapter Chair, Costa Rica Section",
+      "url": "https://signalprocessingsociety.org/",
+      "startDate": "2024-04-01",
+      "endDate": "2025-12-31",
+      "summary": "Serving as Chapter Chair of the IEEE Signal Processing Society Costa Rica Section, leading initiatives in research, education, and professional development.",
+      "highlights": [
+        "Organized technical talks, workshops, and networking events in signal processing",
+        "Fostered collaboration between academia, industry, and students",
+        "Promoted member engagement and growth within the IEEE Signal Processing Society community in Costa Rica"
       ]
     }
   ],
@@ -139,7 +179,6 @@
         "Database Systems"
       ]
     },
-
     {
       "institution": "Instituto Tecnológico de Costa Rica",
       "url": "https://www.tec.ac.cr/",
