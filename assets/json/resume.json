@@ -25,15 +25,29 @@
     {
       "name": "Language Sciences Faculty, Costa Rica Institute of Technology",
       "position": "Research Assistant",
-      "url": "https://example.com",
+      "url": "https://www.tec.ac.cr/escuela-ciencias-lenguaje",
       "startDate": "2025-02-01",
       "endDate": "2025-12-01",
-      "summary": "Solely responsible for developing algorithms and experimenting with instruction-based large language models for Spanish text simplification and text complexity assessment using deep learning and LLMs. Conducted research, drafted papers, and effectively communicated results.",
+      "summary": "Led research on Spanish text simplification and text complexity assessment using instruction-based large language models and deep learning. Designed algorithms, conducted experiments, authored research papers, and presented findings effectively.",
       "highlights": [
-        "Large Language Models",
-        "Natural Language Processing",
+        "Large Language Models (LLMs)",
+        "Natural Language Processing (NLP)",
         "Foundational Models",
         "Prompt Engineering"
+      ]
+    },
+    {
+      "name": "Centro Nacional de Alta Tecnología",
+      "position": "Researcher",
+      "url": "https://cnca.cenat.ac.cr/en/",
+      "startDate": "2024-10-05",
+      "endDate": "2025-08-05",
+      "summary": "Conducted applied research in the Costa Rican pineapple industry, developing automated fruit detection methods from drone-based video for yield estimation. Designed and optimized deep learning models for robust and accurate pineapple detection under real-world conditions.",
+      "highlights": [
+        "Multi-Object Tracking",
+        "Video and Image Analysis",
+        "Unmanned Aerial Vehicles (UAVs)",
+        "Precision Agriculture"
       ]
     }
   ],
