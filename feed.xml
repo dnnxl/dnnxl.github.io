@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://dnnxl.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://dnnxl.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-08-29T16:00:31+00:00</updated><id>https://dnnxl.github.io/feed.xml</id><title type="html">blank</title><subtitle>Here’s my personal profile, you’re welcome to check it out. </subtitle><entry><title type="html">Containers</title><link href="https://dnnxl.github.io/blog/2025/Containers/" rel="alternate" type="text/html" title="Containers"/><published>2025-08-25T16:40:16+00:00</published><updated>2025-08-25T16:40:16+00:00</updated><id>https://dnnxl.github.io/blog/2025/Containers</id><content type="html" xml:base="https://dnnxl.github.io/blog/2025/Containers/"><![CDATA[<h1 id="contenedores">Contenedores</h1> <p>What is a docker?</p> <p>To check the Ubuntu version:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~<span class="nv">$ </span>lsb_release <span class="nt">-a</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://dnnxl.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://dnnxl.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-08-30T01:51:49+00:00</updated><id>https://dnnxl.github.io/feed.xml</id><title type="html">blank</title><subtitle>Here’s my personal profile, you’re welcome to check it out. </subtitle><entry><title type="html">Containers</title><link href="https://dnnxl.github.io/blog/2025/Containers/" rel="alternate" type="text/html" title="Containers"/><published>2025-08-25T16:40:16+00:00</published><updated>2025-08-25T16:40:16+00:00</updated><id>https://dnnxl.github.io/blog/2025/Containers</id><content type="html" xml:base="https://dnnxl.github.io/blog/2025/Containers/"><![CDATA[<h1 id="contenedores">Contenedores</h1> <p>What is a docker?</p> <p>To check the Ubuntu version:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~<span class="nv">$ </span>lsb_release <span class="nt">-a</span>
 No LSB modules are available.
 Distributor ID:	Ubuntu
 Description:	Ubuntu 24.04.2 LTS
@@ -187,6 +187,7 @@ dockersamples/static-site   latest    f589ccde7957   9 years ago    191MB
 </span>Digest: sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214
 Status: Downloaded newer image <span class="k">for </span>ubuntu:20.04
 docker.io/library/ubuntu:20.04
+
 <span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~<span class="nv">$ </span><span class="nb">sudo </span>docker pull ubuntu
 Using default tag: latest
 latest: Pulling from library/ubuntu
@@ -194,6 +195,119 @@ b71466b94f26: Pull <span class="nb">complete
 </span>Digest: sha256:7c06e91f61fa88c08cc74f7e1b7c69ae24910d745357e0dfe1d2c0322aaf20f9
 Status: Downloaded newer image <span class="k">for </span>ubuntu:latest
 docker.io/library/ubuntu:latest
+</code></pre></div></div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~<span class="nv">$ </span><span class="nb">sudo </span>docker search llama
+NAME                    DESCRIPTION                                     STARS     OFFICIAL
+hariag/llama                                                            0         
+mikolatero/llama        ¡Print a llama <span class="k">in </span>your console!                 3         
+kristianfoss/llama                                                      0         
+dumij/llama                                                             0         
+chapizze/llama          Ubuntu 22.04 with build <span class="k">in </span>llama model          1         
+azuras/llama                                                            0         
+parryparryparry/llama                                                   0         
+nelhage/llama           Llama Lambda runtime                            0         
+ruian1/llama            llama training, cuda 11.6 python 3.10           1         
+stacktic/llama                                                          0         
+watchall/llama                                                          0         
+michaell404/llama                                                       0         
+geraldzeng/llama        WashU NLP LLaMA                                 0         
+ranchlai/llama          llama                                           0         
+liangleon/llama                                                         0         
+alexcb132/llama         obviously not related to the llama cardgame     0         
+jaemushim/llama                                                         0         
+albanacelepija/llama                                                    0         
+hgfkeep/llama                                                           0         
+tanisha441/llama                                                        0         
+ai/llama3.2             Solid LLaMA 3 update, reliable <span class="k">for </span>coding, c…   17        
+paperspace/llama                                                        0         
+vyomchara/llama                                                         0         
+darren2046/llama                                                        0         
+ai/llama3.3             Newest LLama 3 release with improved reasoni…   11        
+</code></pre></div></div> <h2 id="creando-su-primera-imágen">Creando su primera imágen</h2> <ol> <li>Descargue una copia del “flask-app” desde</li> <li>Cree un archivo llamado Dockerfile (dentro del directorio flask-app/) y agregue lo descrito a continuación: Agregue la imagen base.</li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">ls
+</span>app.py  Dockerfile  requirements.txt  templates
+<span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">cat </span>Dockerfile 
+<span class="c"># Utilizar la imagen base de Python 2.7 con Alpine Linux</span>
+FROM python:2.7-alpine<span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span>
+</code></pre></div></div> <p>Utilice el comando RUN para instalar y actualizar el paquete PIP .</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker build <span class="nt">-t</span> rtxmsi1/myfirstapp  <span class="nb">.</span>
+<span class="o">[</span><span class="nb">sudo</span><span class="o">]</span> password <span class="k">for </span>rtxmsi1: 
+<span class="o">[</span>+] Building 10.9s <span class="o">(</span>11/11<span class="o">)</span> FINISHED                              docker:default
+ <span class="o">=&gt;</span> <span class="o">[</span>internal] load build definition from Dockerfile                       0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> transferring dockerfile: 523B                                       0.0s
+ <span class="o">=&gt;</span> <span class="o">[</span>internal] load metadata <span class="k">for </span>docker.io/library/python:2.7-alpine       1.3s
+ <span class="o">=&gt;</span> <span class="o">[</span>internal] load .dockerignore                                          0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> transferring context: 2B                                            0.0s
+ <span class="o">=&gt;</span> <span class="o">[</span>internal] load build context                                          0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> transferring context: 1.72kB                                        0.0s
+ <span class="o">=&gt;</span> <span class="o">[</span>1/6] FROM docker.io/library/python:2.7-alpine@sha256:724d0540eb56ffa  1.9s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> resolve docker.io/library/python:2.7-alpine@sha256:724d0540eb56ffa  0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc 20.28MB / 20.28MB  1.5s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:724d0540eb56ffaa6dd770aa13c3bc7dfc829dec561 1.65kB / 1.65kB  0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:b9ca0d225d42fd188bd636148229d121586fe7dcf3d 1.16kB / 1.16kB  0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:8579e446340f415fece00398a37dbdc4fff1f16901a 7.51kB / 7.51kB  0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042 2.80MB / 2.80MB  0.4s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a9 301.29kB / 301.29kB  0.2s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065 1.89MB / 1.89MB  0.8s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> extracting sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042fa7f3  0.1s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> extracting sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a92944c91b0  0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> extracting sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc8209937  0.2s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> extracting sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065f54be  0.1s
+ <span class="o">=&gt;</span> <span class="o">[</span>2/6] RUN apk add <span class="nt">--update</span> py2-pip                                     3.0s
+ <span class="o">=&gt;</span> <span class="o">[</span>3/6] COPY requirements.txt /usr/src/app/                              0.3s 
+ <span class="o">=&gt;</span> <span class="o">[</span>4/6] RUN pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="nt">-r</span> /usr/src/app/requirements.txt  3.6s
+ <span class="o">=&gt;</span> <span class="o">[</span>5/6] COPY app.py /usr/src/app/                                        0.0s
+ <span class="o">=&gt;</span> <span class="o">[</span>6/6] COPY templates/index.html /usr/src/app/templates/                0.0s
+ <span class="o">=&gt;</span> exporting to image                                                     0.6s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> exporting layers                                                    0.6s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> writing image sha256:c0d00c16568eebab03bf337e5ed4127afe4213225faba  0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> naming to docker.io/rtxmsi1/myfirstapp                              0.0s
+<span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span>
+</code></pre></div></div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker run <span class="nt">-p</span> 8888:5000 <span class="nt">--name</span> myfirstapp rtxmsi1/myfirstapp
+ <span class="k">*</span> Serving Flask app <span class="s2">"app"</span> <span class="o">(</span>lazy loading<span class="o">)</span>
+ <span class="k">*</span> Environment: production
+   WARNING: Do not use the development server <span class="k">in </span>a production environment.
+   Use a production WSGI server instead.
+ <span class="k">*</span> Debug mode: off
+ <span class="k">*</span> Running on http://0.0.0.0:5000/ <span class="o">(</span>Press CTRL+C to quit<span class="o">)</span>
+</code></pre></div></div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker login
+
+USING WEB-BASED LOGIN
+
+i Info → To sign <span class="k">in </span>with credentials on the <span class="nb">command </span>line, use <span class="s1">'docker login -u &lt;username&gt;'</span>
+         
+
+Your one-time device confirmation code is: KJHF-BKGZ
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting <span class="k">for </span>authentication <span class="k">in </span>the browser…
+
+
+WARNING! Your credentials are stored unencrypted <span class="k">in</span> <span class="s1">'/root/.docker/config.json'</span><span class="nb">.</span>
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+</code></pre></div></div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker push dnnxl/myfirstapp
+Using default tag: latest
+The push refers to repository <span class="o">[</span>docker.io/dnnxl/myfirstapp]
+e2cc4e0e71a1: Pushed 
+6062b588f9f5: Pushed 
+57fd4b516070: Pushed 
+c1ca756d57be: Pushed 
+84089413c945: Pushed 
+879c0d8666e3: Pushed 
+20a7b70bdf2f: Pushed 
+3fc750b41be7: Pushed 
+beee9f30bc1f: Pushed 
+latest: digest: sha256:a879dd3bf1350512425f21d0eb3ed0d93e3af3364f4b88ba2dcf3b8207dbe1fb size: 2205
+</code></pre></div></div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker <span class="nb">rm</span> <span class="nt">-f</span> myfirstapp
+myfirstapp
+</code></pre></div></div> <p>(11) Modificación dentro de la imagen</p> <p>Acción realizada: Editar el archivo templates/index.html cambiando la palabra “Dog” por “Cat”.</p> <p>Pasos adicionales requeridos:</p> <p>Modificar el archivo dentro del proyecto local.</p> <p>Reconstruir la imagen Docker con el cambio:</p> <p>(12) Monte un volumen fuera del contenedor asociado al directorio templates. Y cambie el estilo de background de color negro a blanco. ¿Qué diferencia hubo en relación al cambio del punto 11?</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker run <span class="nt">-d</span> <span class="nt">-p</span> 8888:5000 <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/templates:/app/templates <span class="nt">--name</span> myfirstapp dnnxl/myfirstapp
+975d019abbdd8bb4ec352f6f1529c2b61b6c22659868cf97aff20afe99f31fb1
+
+<span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker inspect <span class="nt">-f</span> <span class="s1">''</span> myfirstapp
+/home/rtxmsi1/Downloads/flask-app/templates -&gt; /app/templates
+</code></pre></div></div> <p>Corriendo</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker ps
+CONTAINER ID   IMAGE              COMMAND                  CREATED              STATUS              PORTS                                         NAMES
+975d019abbdd   dnnxl/myfirstapp   <span class="s2">"python /usr/src/app…"</span>   About a minute ago   Up About a minute   0.0.0.0:8888-&gt;5000/tcp, <span class="o">[</span>::]:8888-&gt;5000/tcp   myfirstapp
 </code></pre></div></div>]]></content><author><name></name></author><category term="sample-posts"/><category term="unikernel"/><summary type="html"><![CDATA[march & april, looking forward to summer]]></summary></entry><entry><title type="html">a post with plotly.js</title><link href="https://dnnxl.github.io/blog/2025/plotly/" rel="alternate" type="text/html" title="a post with plotly.js"/><published>2025-03-26T14:24:00+00:00</published><updated>2025-03-26T14:24:00+00:00</updated><id>https://dnnxl.github.io/blog/2025/plotly</id><content type="html" xml:base="https://dnnxl.github.io/blog/2025/plotly/"><![CDATA[<p>This is an example post with some <a href="https://plotly.com/javascript/">plotly</a> code.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">plotly
 </span><span class="sb">{
   "data": [
@@ -300,16 +414,16 @@ Content 2
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endtab</span><span class="w"> </span><span class="cp">%}</span>
 
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endtabs</span><span class="w"> </span><span class="cp">%}</span>
-</code></pre></div></div> <p>With this you can generate visualizations like:</p> <ul id="log" class="tab" data-tab="e93a8f79-92a7-46c7-8722-3ad326accf0c" data-name="log"> <li class="active" id="log-php"> <a href="#">php </a> </li> <li id="log-js"> <a href="#">js </a> </li> <li id="log-ruby"> <a href="#">ruby </a> </li> </ul> <ul class="tab-content" id="e93a8f79-92a7-46c7-8722-3ad326accf0c" data-name="log"> <li class="active"> <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">var_dump</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
+</code></pre></div></div> <p>With this you can generate visualizations like:</p> <ul id="log" class="tab" data-tab="6f79ebdb-7c6a-459c-804e-5c1bc22949e4" data-name="log"> <li class="active" id="log-php"> <a href="#">php </a> </li> <li id="log-js"> <a href="#">js </a> </li> <li id="log-ruby"> <a href="#">ruby </a> </li> </ul> <ul class="tab-content" id="6f79ebdb-7c6a-459c-804e-5c1bc22949e4" data-name="log"> <li class="active"> <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">var_dump</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
 </code></pre></div></div> </li> <li> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div> </li> <li> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">pputs</span> <span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span>
-</code></pre></div></div> </li> </ul> <h2 id="another-example">Another example</h2> <ul id="data-struct" class="tab" data-tab="9954b878-2295-4980-89f6-0fe3afd2cb02" data-name="data-struct"> <li class="active" id="data-struct-yaml"> <a href="#">yaml </a> </li> <li id="data-struct-json"> <a href="#">json </a> </li> </ul> <ul class="tab-content" id="9954b878-2295-4980-89f6-0fe3afd2cb02" data-name="data-struct"> <li class="active"> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hello</span><span class="pi">:</span>
+</code></pre></div></div> </li> </ul> <h2 id="another-example">Another example</h2> <ul id="data-struct" class="tab" data-tab="0cdc7d5e-c00f-4e6a-a6d8-8992e194b1d9" data-name="data-struct"> <li class="active" id="data-struct-yaml"> <a href="#">yaml </a> </li> <li id="data-struct-json"> <a href="#">json </a> </li> </ul> <ul class="tab-content" id="0cdc7d5e-c00f-4e6a-a6d8-8992e194b1d9" data-name="data-struct"> <li class="active"> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hello</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s2">"</span><span class="s">whatsup"</span>
   <span class="pi">-</span> <span class="s2">"</span><span class="s">hi"</span>
 </code></pre></div></div> </li> <li> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"hello"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"whatsup"</span><span class="p">,</span><span class="w"> </span><span class="s2">"hi"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div> </li> </ul> <h2 id="tabs-for-something-else">Tabs for something else</h2> <ul id="something-else" class="tab" data-tab="b7850497-fe46-4c99-8816-fc0e277369d5" data-name="something-else"> <li class="active" id="something-else-text"> <a href="#">text </a> </li> <li id="something-else-quote"> <a href="#">quote </a> </li> <li id="something-else-list"> <a href="#">list </a> </li> </ul> <ul class="tab-content" id="b7850497-fe46-4c99-8816-fc0e277369d5" data-name="something-else"> <li class="active"> <p>Regular text</p> </li> <li> <blockquote> <p>A quote</p> </blockquote> </li> <li> <p>Hipster list</p> <ul> <li>brunch</li> <li>fixie</li> <li>raybans</li> <li>messenger bag</li> </ul> </li> </ul>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[this is what included tabs in a post could look like]]></summary></entry><entry><title type="html">a post with typograms</title><link href="https://dnnxl.github.io/blog/2024/typograms/" rel="alternate" type="text/html" title="a post with typograms"/><published>2024-04-29T23:36:10+00:00</published><updated>2024-04-29T23:36:10+00:00</updated><id>https://dnnxl.github.io/blog/2024/typograms</id><content type="html" xml:base="https://dnnxl.github.io/blog/2024/typograms/"><![CDATA[<p>This is an example post with some <a href="https://github.com/google/typograms/">typograms</a> code.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">typograms
+</span></code></pre></div></div> </li> </ul> <h2 id="tabs-for-something-else">Tabs for something else</h2> <ul id="something-else" class="tab" data-tab="4badd1f3-e0d3-4508-bed3-2fc6f8c79b66" data-name="something-else"> <li class="active" id="something-else-text"> <a href="#">text </a> </li> <li id="something-else-quote"> <a href="#">quote </a> </li> <li id="something-else-list"> <a href="#">list </a> </li> </ul> <ul class="tab-content" id="4badd1f3-e0d3-4508-bed3-2fc6f8c79b66" data-name="something-else"> <li class="active"> <p>Regular text</p> </li> <li> <blockquote> <p>A quote</p> </blockquote> </li> <li> <p>Hipster list</p> <ul> <li>brunch</li> <li>fixie</li> <li>raybans</li> <li>messenger bag</li> </ul> </li> </ul>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="code"/><summary type="html"><![CDATA[this is what included tabs in a post could look like]]></summary></entry><entry><title type="html">a post with typograms</title><link href="https://dnnxl.github.io/blog/2024/typograms/" rel="alternate" type="text/html" title="a post with typograms"/><published>2024-04-29T23:36:10+00:00</published><updated>2024-04-29T23:36:10+00:00</updated><id>https://dnnxl.github.io/blog/2024/typograms</id><content type="html" xml:base="https://dnnxl.github.io/blog/2024/typograms/"><![CDATA[<p>This is an example post with some <a href="https://github.com/google/typograms/">typograms</a> code.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">typograms
 </span><span class="sb">+----+
 |    |---&gt; My first diagram!
 +----+</span>

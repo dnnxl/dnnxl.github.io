@@ -189,6 +189,7 @@ dockersamples/static-site   latest    f589ccde7957   9 years ago    191MB
 </span>Digest: sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214
 Status: Downloaded newer image <span class="k">for </span>ubuntu:20.04
 docker.io/library/ubuntu:20.04
+
 <span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~<span class="nv">$ </span><span class="nb">sudo </span>docker pull ubuntu
 Using default tag: latest
 latest: Pulling from library/ubuntu
@@ -196,6 +197,119 @@ b71466b94f26: Pull <span class="nb">complete
 </span>Digest: sha256:7c06e91f61fa88c08cc74f7e1b7c69ae24910d745357e0dfe1d2c0322aaf20f9
 Status: Downloaded newer image <span class="k">for </span>ubuntu:latest
 docker.io/library/ubuntu:latest
+</code></pre></div></div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~<span class="nv">$ </span><span class="nb">sudo </span>docker search llama
+NAME                    DESCRIPTION                                     STARS     OFFICIAL
+hariag/llama                                                            0         
+mikolatero/llama        ¡Print a llama <span class="k">in </span>your console!                 3         
+kristianfoss/llama                                                      0         
+dumij/llama                                                             0         
+chapizze/llama          Ubuntu 22.04 with build <span class="k">in </span>llama model          1         
+azuras/llama                                                            0         
+parryparryparry/llama                                                   0         
+nelhage/llama           Llama Lambda runtime                            0         
+ruian1/llama            llama training, cuda 11.6 python 3.10           1         
+stacktic/llama                                                          0         
+watchall/llama                                                          0         
+michaell404/llama                                                       0         
+geraldzeng/llama        WashU NLP LLaMA                                 0         
+ranchlai/llama          llama                                           0         
+liangleon/llama                                                         0         
+alexcb132/llama         obviously not related to the llama cardgame     0         
+jaemushim/llama                                                         0         
+albanacelepija/llama                                                    0         
+hgfkeep/llama                                                           0         
+tanisha441/llama                                                        0         
+ai/llama3.2             Solid LLaMA 3 update, reliable <span class="k">for </span>coding, c…   17        
+paperspace/llama                                                        0         
+vyomchara/llama                                                         0         
+darren2046/llama                                                        0         
+ai/llama3.3             Newest LLama 3 release with improved reasoni…   11        
+</code></pre></div></div> <h2 id="creando-su-primera-imágen">Creando su primera imágen</h2> <ol> <li>Descargue una copia del “flask-app” desde</li> <li>Cree un archivo llamado Dockerfile (dentro del directorio flask-app/) y agregue lo descrito a continuación: Agregue la imagen base.</li> </ol> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">ls
+</span>app.py  Dockerfile  requirements.txt  templates
+<span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">cat </span>Dockerfile 
+<span class="c"># Utilizar la imagen base de Python 2.7 con Alpine Linux</span>
+FROM python:2.7-alpine<span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span>
+</code></pre></div></div> <p>Utilice el comando RUN para instalar y actualizar el paquete PIP .</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker build <span class="nt">-t</span> rtxmsi1/myfirstapp  <span class="nb">.</span>
+<span class="o">[</span><span class="nb">sudo</span><span class="o">]</span> password <span class="k">for </span>rtxmsi1: 
+<span class="o">[</span>+] Building 10.9s <span class="o">(</span>11/11<span class="o">)</span> FINISHED                              docker:default
+ <span class="o">=&gt;</span> <span class="o">[</span>internal] load build definition from Dockerfile                       0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> transferring dockerfile: 523B                                       0.0s
+ <span class="o">=&gt;</span> <span class="o">[</span>internal] load metadata <span class="k">for </span>docker.io/library/python:2.7-alpine       1.3s
+ <span class="o">=&gt;</span> <span class="o">[</span>internal] load .dockerignore                                          0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> transferring context: 2B                                            0.0s
+ <span class="o">=&gt;</span> <span class="o">[</span>internal] load build context                                          0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> transferring context: 1.72kB                                        0.0s
+ <span class="o">=&gt;</span> <span class="o">[</span>1/6] FROM docker.io/library/python:2.7-alpine@sha256:724d0540eb56ffa  1.9s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> resolve docker.io/library/python:2.7-alpine@sha256:724d0540eb56ffa  0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc 20.28MB / 20.28MB  1.5s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:724d0540eb56ffaa6dd770aa13c3bc7dfc829dec561 1.65kB / 1.65kB  0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:b9ca0d225d42fd188bd636148229d121586fe7dcf3d 1.16kB / 1.16kB  0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:8579e446340f415fece00398a37dbdc4fff1f16901a 7.51kB / 7.51kB  0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042 2.80MB / 2.80MB  0.4s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a9 301.29kB / 301.29kB  0.2s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065 1.89MB / 1.89MB  0.8s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> extracting sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042fa7f3  0.1s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> extracting sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a92944c91b0  0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> extracting sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc8209937  0.2s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> extracting sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065f54be  0.1s
+ <span class="o">=&gt;</span> <span class="o">[</span>2/6] RUN apk add <span class="nt">--update</span> py2-pip                                     3.0s
+ <span class="o">=&gt;</span> <span class="o">[</span>3/6] COPY requirements.txt /usr/src/app/                              0.3s 
+ <span class="o">=&gt;</span> <span class="o">[</span>4/6] RUN pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="nt">-r</span> /usr/src/app/requirements.txt  3.6s
+ <span class="o">=&gt;</span> <span class="o">[</span>5/6] COPY app.py /usr/src/app/                                        0.0s
+ <span class="o">=&gt;</span> <span class="o">[</span>6/6] COPY templates/index.html /usr/src/app/templates/                0.0s
+ <span class="o">=&gt;</span> exporting to image                                                     0.6s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> exporting layers                                                    0.6s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> writing image sha256:c0d00c16568eebab03bf337e5ed4127afe4213225faba  0.0s
+ <span class="o">=&gt;</span> <span class="o">=&gt;</span> naming to docker.io/rtxmsi1/myfirstapp                              0.0s
+<span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span>
+</code></pre></div></div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker run <span class="nt">-p</span> 8888:5000 <span class="nt">--name</span> myfirstapp rtxmsi1/myfirstapp
+ <span class="k">*</span> Serving Flask app <span class="s2">"app"</span> <span class="o">(</span>lazy loading<span class="o">)</span>
+ <span class="k">*</span> Environment: production
+   WARNING: Do not use the development server <span class="k">in </span>a production environment.
+   Use a production WSGI server instead.
+ <span class="k">*</span> Debug mode: off
+ <span class="k">*</span> Running on http://0.0.0.0:5000/ <span class="o">(</span>Press CTRL+C to quit<span class="o">)</span>
+</code></pre></div></div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker login
+
+USING WEB-BASED LOGIN
+
+i Info → To sign <span class="k">in </span>with credentials on the <span class="nb">command </span>line, use <span class="s1">'docker login -u &lt;username&gt;'</span>
+         
+
+Your one-time device confirmation code is: KJHF-BKGZ
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting <span class="k">for </span>authentication <span class="k">in </span>the browser…
+
+
+WARNING! Your credentials are stored unencrypted <span class="k">in</span> <span class="s1">'/root/.docker/config.json'</span><span class="nb">.</span>
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+</code></pre></div></div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker push dnnxl/myfirstapp
+Using default tag: latest
+The push refers to repository <span class="o">[</span>docker.io/dnnxl/myfirstapp]
+e2cc4e0e71a1: Pushed 
+6062b588f9f5: Pushed 
+57fd4b516070: Pushed 
+c1ca756d57be: Pushed 
+84089413c945: Pushed 
+879c0d8666e3: Pushed 
+20a7b70bdf2f: Pushed 
+3fc750b41be7: Pushed 
+beee9f30bc1f: Pushed 
+latest: digest: sha256:a879dd3bf1350512425f21d0eb3ed0d93e3af3364f4b88ba2dcf3b8207dbe1fb size: 2205
+</code></pre></div></div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker <span class="nb">rm</span> <span class="nt">-f</span> myfirstapp
+myfirstapp
+</code></pre></div></div> <p>(11) Modificación dentro de la imagen</p> <p>Acción realizada: Editar el archivo templates/index.html cambiando la palabra “Dog” por “Cat”.</p> <p>Pasos adicionales requeridos:</p> <p>Modificar el archivo dentro del proyecto local.</p> <p>Reconstruir la imagen Docker con el cambio:</p> <p>(12) Monte un volumen fuera del contenedor asociado al directorio templates. Y cambie el estilo de background de color negro a blanco. ¿Qué diferencia hubo en relación al cambio del punto 11?</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker run <span class="nt">-d</span> <span class="nt">-p</span> 8888:5000 <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/templates:/app/templates <span class="nt">--name</span> myfirstapp dnnxl/myfirstapp
+975d019abbdd8bb4ec352f6f1529c2b61b6c22659868cf97aff20afe99f31fb1
+
+<span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker inspect <span class="nt">-f</span> <span class="s1">''</span> myfirstapp
+/home/rtxmsi1/Downloads/flask-app/templates -&gt; /app/templates
+</code></pre></div></div> <p>Corriendo</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app<span class="nv">$ </span><span class="nb">sudo </span>docker ps
+CONTAINER ID   IMAGE              COMMAND                  CREATED              STATUS              PORTS                                         NAMES
+975d019abbdd   dnnxl/myfirstapp   <span class="s2">"python /usr/src/app…"</span>   About a minute ago   Up About a minute   0.0.0.0:8888-&gt;5000/tcp, <span class="o">[</span>::]:8888-&gt;5000/tcp   myfirstapp
 </code></pre></div></div> </div> </article> <br> <hr> <br> <ul class="list-disc pl-8"></ul> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/" target="_blank" rel="external nofollow noopener">Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra</a> <svg width="1rem" height="1rem" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"> <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path> </svg> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2" target="_blank" rel="external nofollow noopener">Displaying External Posts on Your al-folio Blog</a> <svg width="1rem" height="1rem" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"> <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path> </svg> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2025/plotly/">a post with plotly.js</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/photo-gallery/">a post with image galleries</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/tabs/">a post with tabs</a> </li> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2025 Danny Xie. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script> <script defer src="/assets/js/copy_code.js?c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script> <script>
     addBackToTop();
   </script> <script type="module" src="/assets/js/search/ninja-keys.min.js?a3446f084dcaecc5f75aa1757d087dcf"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/js/search-setup.js?6c304f7b1992d4b60f7a07956e52f04a"></script> <script src="/assets/js/search-data.js"></script> <script src="/assets/js/shortcut-key.js?6f508d74becd347268a7f822bca7309d"></script> </body> </html>
