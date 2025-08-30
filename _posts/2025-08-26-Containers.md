@@ -496,6 +496,7 @@ dockersamples/static-site   latest    f589ccde7957   9 years ago    191MB
 Digest: sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214
 Status: Downloaded newer image for ubuntu:20.04
 docker.io/library/ubuntu:20.04
+
 (base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker pull ubuntu
 Using default tag: latest
 latest: Pulling from library/ubuntu
@@ -508,21 +509,173 @@ docker.io/library/ubuntu:latest
 
 
 
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo docker search llama
+NAME                    DESCRIPTION                                     STARS     OFFICIAL
+hariag/llama                                                            0         
+mikolatero/llama        ¡Print a llama in your console!                 3         
+kristianfoss/llama                                                      0         
+dumij/llama                                                             0         
+chapizze/llama          Ubuntu 22.04 with build in llama model          1         
+azuras/llama                                                            0         
+parryparryparry/llama                                                   0         
+nelhage/llama           Llama Lambda runtime                            0         
+ruian1/llama            llama training, cuda 11.6 python 3.10           1         
+stacktic/llama                                                          0         
+watchall/llama                                                          0         
+michaell404/llama                                                       0         
+geraldzeng/llama        WashU NLP LLaMA                                 0         
+ranchlai/llama          llama                                           0         
+liangleon/llama                                                         0         
+alexcb132/llama         obviously not related to the llama cardgame     0         
+jaemushim/llama                                                         0         
+albanacelepija/llama                                                    0         
+hgfkeep/llama                                                           0         
+tanisha441/llama                                                        0         
+ai/llama3.2             Solid LLaMA 3 update, reliable for coding, c…   17        
+paperspace/llama                                                        0         
+vyomchara/llama                                                         0         
+darren2046/llama                                                        0         
+ai/llama3.3             Newest LLama 3 release with improved reasoni…   11        
+```
+
+
+
+## Creando su primera imágen
+1. Descargue una copia del “flask-app” desde 
+2. Cree un archivo llamado Dockerfile (dentro del directorio flask-app/) y agregue lo descrito a continuación:
+Agregue la imagen base.
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app$ ls
+app.py  Dockerfile  requirements.txt  templates
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app$ cat Dockerfile 
+# Utilizar la imagen base de Python 2.7 con Alpine Linux
+FROM python:2.7-alpine(base) rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app$ 
+```
+
+Utilice el comando RUN para instalar y actualizar el paquete PIP .
 
 
 
 
 
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app$ sudo docker build -t rtxmsi1/myfirstapp  .
+[sudo] password for rtxmsi1: 
+[+] Building 10.9s (11/11) FINISHED                              docker:default
+ => [internal] load build definition from Dockerfile                       0.0s
+ => => transferring dockerfile: 523B                                       0.0s
+ => [internal] load metadata for docker.io/library/python:2.7-alpine       1.3s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [internal] load build context                                          0.0s
+ => => transferring context: 1.72kB                                        0.0s
+ => [1/6] FROM docker.io/library/python:2.7-alpine@sha256:724d0540eb56ffa  1.9s
+ => => resolve docker.io/library/python:2.7-alpine@sha256:724d0540eb56ffa  0.0s
+ => => sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc 20.28MB / 20.28MB  1.5s
+ => => sha256:724d0540eb56ffaa6dd770aa13c3bc7dfc829dec561 1.65kB / 1.65kB  0.0s
+ => => sha256:b9ca0d225d42fd188bd636148229d121586fe7dcf3d 1.16kB / 1.16kB  0.0s
+ => => sha256:8579e446340f415fece00398a37dbdc4fff1f16901a 7.51kB / 7.51kB  0.0s
+ => => sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042 2.80MB / 2.80MB  0.4s
+ => => sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a9 301.29kB / 301.29kB  0.2s
+ => => sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065 1.89MB / 1.89MB  0.8s
+ => => extracting sha256:aad63a9339440e7c3e1fff2b988991b9bfb81280042fa7f3  0.1s
+ => => extracting sha256:259d822268fbc4235d84b0d1faa8a4ff933c0a92944c91b0  0.0s
+ => => extracting sha256:10ba96d218d3fd7421879dbfa14bc0d3938be28dc8209937  0.2s
+ => => extracting sha256:44ba9f6a4209726dd57b562c3913b59c103767d1065f54be  0.1s
+ => [2/6] RUN apk add --update py2-pip                                     3.0s
+ => [3/6] COPY requirements.txt /usr/src/app/                              0.3s 
+ => [4/6] RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt  3.6s
+ => [5/6] COPY app.py /usr/src/app/                                        0.0s
+ => [6/6] COPY templates/index.html /usr/src/app/templates/                0.0s
+ => exporting to image                                                     0.6s
+ => => exporting layers                                                    0.6s
+ => => writing image sha256:c0d00c16568eebab03bf337e5ed4127afe4213225faba  0.0s
+ => => naming to docker.io/rtxmsi1/myfirstapp                              0.0s
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app$ 
+```
 
 
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app$ sudo docker run -p 8888:5000 --name myfirstapp rtxmsi1/myfirstapp
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+```
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app$ sudo docker login
+
+USING WEB-BASED LOGIN
+
+i Info → To sign in with credentials on the command line, use 'docker login -u <username>'
+         
+
+Your one-time device confirmation code is: KJHF-BKGZ
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting for authentication in the browser…
 
 
+WARNING! Your credentials are stored unencrypted in '/root/.docker/config.json'.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+```
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app$ sudo docker push dnnxl/myfirstapp
+Using default tag: latest
+The push refers to repository [docker.io/dnnxl/myfirstapp]
+e2cc4e0e71a1: Pushed 
+6062b588f9f5: Pushed 
+57fd4b516070: Pushed 
+c1ca756d57be: Pushed 
+84089413c945: Pushed 
+879c0d8666e3: Pushed 
+20a7b70bdf2f: Pushed 
+3fc750b41be7: Pushed 
+beee9f30bc1f: Pushed 
+latest: digest: sha256:a879dd3bf1350512425f21d0eb3ed0d93e3af3364f4b88ba2dcf3b8207dbe1fb size: 2205
+```
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app$ sudo docker rm -f myfirstapp
+myfirstapp
+```
+
+(11) Modificación dentro de la imagen
+
+Acción realizada: Editar el archivo templates/index.html cambiando la palabra “Dog” por “Cat”.
+
+Pasos adicionales requeridos:
+
+Modificar el archivo dentro del proyecto local.
+
+Reconstruir la imagen Docker con el cambio:
 
 
+(12) Monte un volumen fuera del contenedor asociado al directorio templates. Y cambie el estilo de background de color negro a blanco. ¿Qué diferencia hubo en relación al cambio del punto 11?
 
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app$ sudo docker run -d -p 8888:5000 -v $(pwd)/templates:/app/templates --name myfirstapp dnnxl/myfirstapp
+975d019abbdd8bb4ec352f6f1529c2b61b6c22659868cf97aff20afe99f31fb1
 
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app$ sudo docker inspect -f '{{range .Mounts}}{{println .Source "->" .Destination}}{{end}}' myfirstapp
+/home/rtxmsi1/Downloads/flask-app/templates -> /app/templates
+```
 
-
+Corriendo
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Downloads/flask-app$ sudo docker ps
+CONTAINER ID   IMAGE              COMMAND                  CREATED              STATUS              PORTS                                         NAMES
+975d019abbdd   dnnxl/myfirstapp   "python /usr/src/app…"   About a minute ago   Up About a minute   0.0.0.0:8888->5000/tcp, [::]:8888->5000/tcp   myfirstapp
+```
 
 
 
