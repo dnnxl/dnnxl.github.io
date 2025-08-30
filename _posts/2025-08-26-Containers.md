@@ -679,17 +679,432 @@ CONTAINER ID   IMAGE              COMMAND                  CREATED              
 
 
 
+## Creando una aplicación web compleja con Docker
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ sudo apt install docker-compose-plugin -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+docker-compose-plugin is already the newest version (2.39.1-1~ubuntu.24.04~noble).
+The following package was automatically installed and is no longer required:
+  nvidia-firmware-550-550.144.03
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 198 not upgraded.
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ docker compose version
+Docker Compose version v2.39.1
+(base) rtxmsi1@rtxmsi1-MS-7E06:~$ 
+```
+Instale docker-compose:
+Cree un directorio llamado Myapp
+Dentro del directorio cree archivos de contraseña con valores aleatorios:
+
+
+---
+
+### (13) ¿En qué consisten los *secrets*?
+
+Los **secrets** en Docker Compose permiten almacenar información sensible como contraseñas, tokens o llaves de acceso de forma segura y separada de la configuración del contenedor.
+En lugar de escribir las contraseñas directamente en el archivo `docker-compose.yml` (lo cual sería inseguro), se guardan en archivos externos (`db_password.txt`, `db_root_password.txt`) y se pasan al contenedor a través del mecanismo de *secrets*.
+Esto protege la información confidencial, facilita la rotación de contraseñas y evita que queden expuestas en repositorios o configuraciones públicas.
+
+---
+
+### (14) ¿Por qué se crea un directorio llamado “db\_data” y para qué se usa?
+
+El volumen `db_data` se crea para **persistir los datos de la base de datos**.
+Cuando un contenedor se elimina, por defecto también se pierde toda la información que contiene. Sin embargo, con un volumen asociado (`db_data:/var/lib/mysql`), los datos de MySQL se guardan fuera del ciclo de vida del contenedor, permitiendo que:
+
+* Si se reinicia o elimina el contenedor, los datos no se pierden.
+* Se pueda actualizar la imagen de MySQL sin perder la información almacenada en las tablas.
+
+En este caso, `db_data` es un volumen gestionado por Docker que asegura la persistencia de la base de datos.
+
+---
+
+### (15) ¿Por qué la definición de puertos del servidor web se establece como “80:80”? ¿Qué significa?
+
+La sintaxis `HOST:CONTENEDOR` significa:
+
+* **El primer número (80)** → es el puerto del host (tu máquina local o servidor).
+* **El segundo número (80)** → es el puerto interno del contenedor donde escucha el servicio (en este caso, Nginx).
+
+Por lo tanto, `80:80` indica que cuando accedemos a `http://localhost:80` en nuestra máquina, la petición se redirige al puerto `80` dentro del contenedor Nginx.
+De manera similar, `443:443` se usa para tráfico HTTPS.
+
+---
+
+### (16) Si ejecutamos la imagen `mysql:5.7` desde `docker run`, ¿cómo le enviaríamos las variables de ambiente?
+
+Cuando usamos `docker run`, las variables de entorno se envían con la opción `-e`. Por ejemplo:
+
+```bash
+docker run -d \
+  --name Mysqldb \
+  -p 3306:3306 \
+  -v db_data:/var/lib/mysql \
+  -e MYSQL_ROOT_PASSWORD=root_secret \
+  -e MYSQL_DATABASE=wordpress \
+  -e MYSQL_USER=wordpress \
+  -e MYSQL_PASSWORD=wp_secret \
+  mysql:5.7
+```
+
+Aquí cada `-e` define una variable de entorno que MySQL usará en la configuración inicial.
+La diferencia es que con `docker run` no tenemos *secrets* de Docker Compose, entonces se colocan directamente en la línea de comandos (menos seguro).
+
+---
+
+### (17) ¿Cuál es la diferencia entre correr un `docker-compose up` y un `docker run`?
+
+* **`docker run`**:
+
+  * Sirve para ejecutar **un solo contenedor**.
+  * Requiere escribir manualmente las opciones (`-e`, `-v`, `-p`, etc.).
+  * No maneja dependencias entre contenedores (por ejemplo, que la base de datos inicie antes que el servidor web).
+
+* **`docker-compose up`**:
+
+  * Permite definir y levantar **múltiples contenedores** en un archivo `docker-compose.yml`.
+  * Maneja dependencias, redes, volúmenes y *secrets* de manera automática.
+  * Es mucho más conveniente para aplicaciones complejas (ej. webserver + base de datos + cache).
+
+`docker run` es más útil para pruebas rápidas o contenedores individuales, mientras que `docker-compose up` es la herramienta indicada para aplicaciones completas que requieren varios servicios trabajando juntos.
 
 
 
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Documents/Myapp$ sudo docker compose up
+WARN[0000] /home/rtxmsi1/Documents/Myapp/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+[+] Running 21/21
+ ✔ db Pulled                                                                                 10.7s 
+   ✔ 20e4dcae4c69 Pull complete                                                               4.0s 
+   ✔ 1c56c3d4ce74 Pull complete                                                               4.0s 
+   ✔ e9f03a1c24ce Pull complete                                                               4.1s 
+   ✔ 68c3898c2015 Pull complete                                                               4.1s 
+   ✔ 6b95a940e7b6 Pull complete                                                               4.2s 
+   ✔ 90986bb8de6e Pull complete                                                               4.2s 
+   ✔ ae71319cb779 Pull complete                                                               4.4s 
+   ✔ ffc89e9dfd88 Pull complete                                                               4.4s 
+   ✔ 43d05e938198 Pull complete                                                               8.9s 
+   ✔ 064b2d298fba Pull complete                                                               8.9s 
+   ✔ df9a4d85569b Pull complete                                                               8.9s 
+ ✔ webserver Pulled                                                                           8.2s 
+   ✔ 9824c27679d3 Already exists                                                              0.0s 
+   ✔ 6bc572a340ec Pull complete                                                               4.6s 
+   ✔ 403e3f251637 Pull complete                                                               4.7s 
+   ✔ 9adfbae99cb7 Pull complete                                                               5.0s 
+   ✔ 7a8a46741e18 Pull complete                                                               5.0s 
+   ✔ c9ebe2ff2d2c Pull complete                                                               5.4s 
+   ✔ a992fbc61ecc Pull complete                                                               5.5s 
+   ✔ cb1ff4086f82 Pull complete                                                               6.4s 
+[+] Running 4/4
+ ✔ Network myapp_default   Created                                                            0.1s 
+ ✔ Volume "myapp_db_data"  Created                                                            0.0s 
+ ✔ Container Mysqldb       Created                                                            0.2s 
+ ✔ Container webserver     Created                                                            0.2s 
+Attaching to Mysqldb, webserver
+Mysqldb  | 2025-08-30 23:47:07+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.44-1.el7 started.
+webserver  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+webserver  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+webserver  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+webserver  | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+webserver  | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+webserver  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+webserver  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+webserver  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+webserver  | /docker-entrypoint.sh: Configuration complete; ready for start up
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: using the "epoll" event method
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: nginx/1.29.1
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: built by gcc 14.2.0 (Alpine 14.2.0) 
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: OS: Linux 6.14.0-28-generic
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker processes
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 30
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 31
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 32
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 33
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 34
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 35
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 36
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 37
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 38
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 39
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 40
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 41
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 42
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 43
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 44
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 45
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 46
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 47
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 48
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 49
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 50
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 51
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 52
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 53
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 54
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 55
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 56
+webserver  | 2025/08/30 23:47:07 [notice] 1#1: start worker process 57
+Mysqldb    | 2025-08-30 23:47:07+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+Mysqldb    | 2025-08-30 23:47:07+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.44-1.el7 started.
+Mysqldb    | 2025-08-30 23:47:07+00:00 [Note] [Entrypoint]: Initializing database files
+Mysqldb    | 2025-08-30T23:47:07.478938Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+Mysqldb    | 2025-08-30T23:47:07.557048Z 0 [Warning] InnoDB: New log files created, LSN=45790
+Mysqldb    | 2025-08-30T23:47:07.579866Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.
+Mysqldb    | 2025-08-30T23:47:07.635993Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: a3971a56-85fb-11f0-9451-22b7f10cfb84.
+Mysqldb    | 2025-08-30T23:47:07.637597Z 0 [Warning] Gtid table is not ready to be used. Table 'mysql.gtid_executed' cannot be opened.
+Mysqldb    | 2025-08-30T23:47:07.754852Z 0 [Warning] A deprecated TLS version TLSv1 is enabled. Please use TLSv1.2 or higher.
+Mysqldb    | 2025-08-30T23:47:07.754855Z 0 [Warning] A deprecated TLS version TLSv1.1 is enabled. Please use TLSv1.2 or higher.
+Mysqldb    | 2025-08-30T23:47:07.755048Z 0 [Warning] CA certificate ca.pem is self signed.
+Mysqldb    | 2025-08-30T23:47:07.768543Z 1 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+Mysqldb    | 2025-08-30 23:47:09+00:00 [Note] [Entrypoint]: Database files initialized
+Mysqldb    | 2025-08-30 23:47:09+00:00 [Note] [Entrypoint]: Starting temporary server
+Mysqldb    | 2025-08-30 23:47:09+00:00 [Note] [Entrypoint]: Waiting for server startup
+Mysqldb    | 2025-08-30T23:47:09.637033Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+Mysqldb    | 2025-08-30T23:47:09.637697Z 0 [Note] mysqld (mysqld 5.7.44) starting as process 127 ...
+Mysqldb    | 2025-08-30T23:47:09.639097Z 0 [Note] InnoDB: PUNCH HOLE support available
+Mysqldb    | 2025-08-30T23:47:09.639106Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+Mysqldb    | 2025-08-30T23:47:09.639108Z 0 [Note] InnoDB: Uses event mutexes
+Mysqldb    | 2025-08-30T23:47:09.639109Z 0 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+Mysqldb    | 2025-08-30T23:47:09.639110Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.13
+Mysqldb    | 2025-08-30T23:47:09.639111Z 0 [Note] InnoDB: Using Linux native AIO
+Mysqldb    | 2025-08-30T23:47:09.639212Z 0 [Note] InnoDB: Number of pools: 1
+Mysqldb    | 2025-08-30T23:47:09.639271Z 0 [Note] InnoDB: Using CPU crc32 instructions
+Mysqldb    | 2025-08-30T23:47:09.639937Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+Mysqldb    | 2025-08-30T23:47:09.643158Z 0 [Note] InnoDB: Completed initialization of buffer pool
+Mysqldb    | 2025-08-30T23:47:09.644003Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+Mysqldb    | 2025-08-30T23:47:09.654796Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+Mysqldb    | 2025-08-30T23:47:09.672216Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+Mysqldb    | 2025-08-30T23:47:09.672248Z 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+Mysqldb    | 2025-08-30T23:47:09.717080Z 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+Mysqldb    | 2025-08-30T23:47:09.718348Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+Mysqldb    | 2025-08-30T23:47:09.718358Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+Mysqldb    | 2025-08-30T23:47:09.719717Z 0 [Note] InnoDB: 5.7.44 started; log sequence number 2768291
+Mysqldb    | 2025-08-30T23:47:09.720080Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+Mysqldb    | 2025-08-30T23:47:09.720363Z 0 [Note] Plugin 'FEDERATED' is disabled.
+Mysqldb    | 2025-08-30T23:47:09.723227Z 0 [Note] InnoDB: Buffer pool(s) load completed at 250830 23:47:09
+Mysqldb    | 2025-08-30T23:47:09.725961Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+Mysqldb    | 2025-08-30T23:47:09.725965Z 0 [Note] Skipping generation of SSL certificates as certificate files are present in data directory.
+Mysqldb    | 2025-08-30T23:47:09.725967Z 0 [Warning] A deprecated TLS version TLSv1 is enabled. Please use TLSv1.2 or higher.
+Mysqldb    | 2025-08-30T23:47:09.725968Z 0 [Warning] A deprecated TLS version TLSv1.1 is enabled. Please use TLSv1.2 or higher.
+Mysqldb    | 2025-08-30T23:47:09.726194Z 0 [Warning] CA certificate ca.pem is self signed.
+Mysqldb    | 2025-08-30T23:47:09.726205Z 0 [Note] Skipping generation of RSA key pair as key files are present in data directory.
+Mysqldb    | 2025-08-30T23:47:09.756425Z 0 [Warning] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+Mysqldb    | 2025-08-30T23:47:09.767265Z 0 [Note] Event Scheduler: Loaded 0 events
+Mysqldb    | 2025-08-30T23:47:09.767677Z 0 [Note] mysqld: ready for connections.
+Mysqldb    | Version: '5.7.44'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server (GPL)
+Mysqldb    | 2025-08-30 23:47:10+00:00 [Note] [Entrypoint]: Temporary server started.
+Mysqldb    | '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+Mysqldb    | 2025-08-30T23:47:10.529430Z 3 [Note] InnoDB: Stopping purge
+Mysqldb    | 2025-08-30T23:47:10.531892Z 3 [Note] InnoDB: Resuming purge
+Mysqldb    | 2025-08-30T23:47:10.533320Z 3 [Note] InnoDB: Stopping purge
+Mysqldb    | 2025-08-30T23:47:10.535808Z 3 [Note] InnoDB: Resuming purge
+Mysqldb    | 2025-08-30T23:47:10.537275Z 3 [Note] InnoDB: Stopping purge
+Mysqldb    | 2025-08-30T23:47:10.539852Z 3 [Note] InnoDB: Resuming purge
+Mysqldb    | 2025-08-30T23:47:10.541631Z 3 [Note] InnoDB: Stopping purge
+Mysqldb    | 2025-08-30T23:47:10.544419Z 3 [Note] InnoDB: Resuming purge
+Mysqldb    | Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+Mysqldb    | Warning: Unable to load '/usr/share/zoneinfo/leapseconds' as time zone. Skipping it.
+Mysqldb    | Warning: Unable to load '/usr/share/zoneinfo/tzdata.zi' as time zone. Skipping it.
+Mysqldb    | Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+Mysqldb    | Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+Mysqldb    | 2025-08-30 23:47:11+00:00 [Note] [Entrypoint]: Creating database wordpress
+Mysqldb    | 2025-08-30 23:47:11+00:00 [Note] [Entrypoint]: Creating user wordpress
+Mysqldb    | 2025-08-30 23:47:11+00:00 [Note] [Entrypoint]: Giving user wordpress access to schema wordpress
+Mysqldb    | 
+Mysqldb    | 2025-08-30 23:47:11+00:00 [Note] [Entrypoint]: Stopping temporary server
+Mysqldb    | 2025-08-30T23:47:11.354763Z 0 [Note] Giving 0 client threads a chance to die gracefully
+Mysqldb    | 2025-08-30T23:47:11.354825Z 0 [Note] Shutting down slave threads
+Mysqldb    | 2025-08-30T23:47:11.354837Z 0 [Note] Forcefully disconnecting 0 remaining clients
+Mysqldb    | 2025-08-30T23:47:11.354850Z 0 [Note] Event Scheduler: Purging the queue. 0 events
+Mysqldb    | 2025-08-30T23:47:11.354931Z 0 [Note] Binlog end
+Mysqldb    | 2025-08-30T23:47:11.355763Z 0 [Note] Shutting down plugin 'ngram'
+Mysqldb    | 2025-08-30T23:47:11.355786Z 0 [Note] Shutting down plugin 'partition'
+Mysqldb    | 2025-08-30T23:47:11.355792Z 0 [Note] Shutting down plugin 'BLACKHOLE'
+Mysqldb    | 2025-08-30T23:47:11.355798Z 0 [Note] Shutting down plugin 'ARCHIVE'
+Mysqldb    | 2025-08-30T23:47:11.355801Z 0 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+Mysqldb    | 2025-08-30T23:47:11.355846Z 0 [Note] Shutting down plugin 'MRG_MYISAM'
+Mysqldb    | 2025-08-30T23:47:11.355854Z 0 [Note] Shutting down plugin 'MyISAM'
+Mysqldb    | 2025-08-30T23:47:11.355863Z 0 [Note] Shutting down plugin 'INNODB_SYS_VIRTUAL'
+Mysqldb    | 2025-08-30T23:47:11.355867Z 0 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+Mysqldb    | 2025-08-30T23:47:11.355871Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+Mysqldb    | 2025-08-30T23:47:11.355875Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+Mysqldb    | 2025-08-30T23:47:11.355878Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+Mysqldb    | 2025-08-30T23:47:11.355881Z 0 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+Mysqldb    | 2025-08-30T23:47:11.355884Z 0 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+Mysqldb    | 2025-08-30T23:47:11.355886Z 0 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+Mysqldb    | 2025-08-30T23:47:11.355889Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+Mysqldb    | 2025-08-30T23:47:11.355892Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+Mysqldb    | 2025-08-30T23:47:11.355895Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+Mysqldb    | 2025-08-30T23:47:11.355899Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+Mysqldb    | 2025-08-30T23:47:11.355904Z 0 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+Mysqldb    | 2025-08-30T23:47:11.355909Z 0 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+Mysqldb    | 2025-08-30T23:47:11.355914Z 0 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+Mysqldb    | 2025-08-30T23:47:11.355919Z 0 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+Mysqldb    | 2025-08-30T23:47:11.355925Z 0 [Note] Shutting down plugin 'INNODB_METRICS'
+Mysqldb    | 2025-08-30T23:47:11.355930Z 0 [Note] Shutting down plugin 'INNODB_TEMP_TABLE_INFO'
+Mysqldb    | 2025-08-30T23:47:11.355936Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+Mysqldb    | 2025-08-30T23:47:11.355941Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+Mysqldb    | 2025-08-30T23:47:11.355945Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+Mysqldb    | 2025-08-30T23:47:11.355949Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+Mysqldb    | 2025-08-30T23:47:11.355953Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+Mysqldb    | 2025-08-30T23:47:11.355958Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+Mysqldb    | 2025-08-30T23:47:11.355963Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM'
+Mysqldb    | 2025-08-30T23:47:11.355969Z 0 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+Mysqldb    | 2025-08-30T23:47:11.355974Z 0 [Note] Shutting down plugin 'INNODB_CMP'
+Mysqldb    | 2025-08-30T23:47:11.355980Z 0 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+Mysqldb    | 2025-08-30T23:47:11.355983Z 0 [Note] Shutting down plugin 'INNODB_LOCKS'
+Mysqldb    | 2025-08-30T23:47:11.355988Z 0 [Note] Shutting down plugin 'INNODB_TRX'
+Mysqldb    | 2025-08-30T23:47:11.355993Z 0 [Note] Shutting down plugin 'InnoDB'
+Mysqldb    | 2025-08-30T23:47:11.356122Z 0 [Note] InnoDB: FTS optimize thread exiting.
+Mysqldb    | 2025-08-30T23:47:11.356280Z 0 [Note] InnoDB: Starting shutdown...
+Mysqldb    | 2025-08-30T23:47:11.456628Z 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+Mysqldb    | 2025-08-30T23:47:11.457589Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 250830 23:47:11
+Mysqldb    | 2025-08-30T23:47:12.569021Z 0 [Note] InnoDB: Shutdown completed; log sequence number 12219253
+Mysqldb    | 2025-08-30T23:47:12.569781Z 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+Mysqldb    | 2025-08-30T23:47:12.569800Z 0 [Note] Shutting down plugin 'MEMORY'
+Mysqldb    | 2025-08-30T23:47:12.569801Z 0 [Note] Shutting down plugin 'CSV'
+Mysqldb    | 2025-08-30T23:47:12.569803Z 0 [Note] Shutting down plugin 'sha256_password'
+Mysqldb    | 2025-08-30T23:47:12.569803Z 0 [Note] Shutting down plugin 'mysql_native_password'
+Mysqldb    | 2025-08-30T23:47:12.569854Z 0 [Note] Shutting down plugin 'binlog'
+Mysqldb    | 2025-08-30T23:47:12.570617Z 0 [Note] mysqld: Shutdown complete
+Mysqldb    | 
+Mysqldb    | 2025-08-30 23:47:13+00:00 [Note] [Entrypoint]: Temporary server stopped
+Mysqldb    | 
+Mysqldb    | 2025-08-30 23:47:13+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+Mysqldb    | 
+Mysqldb    | 2025-08-30T23:47:13.527450Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+Mysqldb    | 2025-08-30T23:47:13.528115Z 0 [Note] mysqld (mysqld 5.7.44) starting as process 1 ...
+Mysqldb    | 2025-08-30T23:47:13.529576Z 0 [Note] InnoDB: PUNCH HOLE support available
+Mysqldb    | 2025-08-30T23:47:13.529586Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+Mysqldb    | 2025-08-30T23:47:13.529587Z 0 [Note] InnoDB: Uses event mutexes
+Mysqldb    | 2025-08-30T23:47:13.529588Z 0 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+Mysqldb    | 2025-08-30T23:47:13.529589Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.13
+Mysqldb    | 2025-08-30T23:47:13.529590Z 0 [Note] InnoDB: Using Linux native AIO
+Mysqldb    | 2025-08-30T23:47:13.529691Z 0 [Note] InnoDB: Number of pools: 1
+Mysqldb    | 2025-08-30T23:47:13.529734Z 0 [Note] InnoDB: Using CPU crc32 instructions
+Mysqldb    | 2025-08-30T23:47:13.530398Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+Mysqldb    | 2025-08-30T23:47:13.533613Z 0 [Note] InnoDB: Completed initialization of buffer pool
+Mysqldb    | 2025-08-30T23:47:13.534633Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+Mysqldb    | 2025-08-30T23:47:13.545397Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+Mysqldb    | 2025-08-30T23:47:13.548834Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+Mysqldb    | 2025-08-30T23:47:13.548852Z 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+Mysqldb    | 2025-08-30T23:47:13.566467Z 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+Mysqldb    | 2025-08-30T23:47:13.566823Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+Mysqldb    | 2025-08-30T23:47:13.566826Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+Mysqldb    | 2025-08-30T23:47:13.566982Z 0 [Note] InnoDB: Waiting for purge to start
+Mysqldb    | 2025-08-30T23:47:13.617158Z 0 [Note] InnoDB: 5.7.44 started; log sequence number 12219253
+Mysqldb    | 2025-08-30T23:47:13.617516Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+Mysqldb    | 2025-08-30T23:47:13.617559Z 0 [Note] Plugin 'FEDERATED' is disabled.
+Mysqldb    | 2025-08-30T23:47:13.622133Z 0 [Note] InnoDB: Buffer pool(s) load completed at 250830 23:47:13
+Mysqldb    | 2025-08-30T23:47:13.623847Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+Mysqldb    | 2025-08-30T23:47:13.623859Z 0 [Note] Skipping generation of SSL certificates as certificate files are present in data directory.
+Mysqldb    | 2025-08-30T23:47:13.623864Z 0 [Warning] A deprecated TLS version TLSv1 is enabled. Please use TLSv1.2 or higher.
+Mysqldb    | 2025-08-30T23:47:13.623867Z 0 [Warning] A deprecated TLS version TLSv1.1 is enabled. Please use TLSv1.2 or higher.
+Mysqldb    | 2025-08-30T23:47:13.624512Z 0 [Warning] CA certificate ca.pem is self signed.
+Mysqldb    | 2025-08-30T23:47:13.624546Z 0 [Note] Skipping generation of RSA key pair as key files are present in data directory.
+Mysqldb    | 2025-08-30T23:47:13.624815Z 0 [Note] Server hostname (bind-address): '*'; port: 3306
+Mysqldb    | 2025-08-30T23:47:13.624846Z 0 [Note] IPv6 is available.
+Mysqldb    | 2025-08-30T23:47:13.624857Z 0 [Note]   - '::' resolves to '::';
+Mysqldb    | 2025-08-30T23:47:13.624871Z 0 [Note] Server socket created on IP: '::'.
+Mysqldb    | 2025-08-30T23:47:13.626089Z 0 [Warning] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+Mysqldb    | 2025-08-30T23:47:13.629981Z 0 [Note] Event Scheduler: Loaded 0 events
+Mysqldb    | 2025-08-30T23:47:13.630134Z 0 [Note] mysqld: ready for connections.
+Mysqldb    | Version: '5.7.44'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
+```
+
+
+## Liste los servicios
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Documents/Myapp$ sudo docker compose ps
+[sudo] password for rtxmsi1: 
+WARN[0000] /home/rtxmsi1/Documents/Myapp/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+NAME        IMAGE          COMMAND                  SERVICE     CREATED         STATUS          PORTS
+Mysqldb     mysql:5.7      "docker-entrypoint.s…"   db          2 minutes ago   Up 40 seconds   0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp, 33060/tcp
+webserver   nginx:alpine   "/docker-entrypoint.…"   webserver   2 minutes ago   Up 40 seconds   0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Documents/Myapp$ 
+```
+
+
+## Verifique que tiene acceso a MySql (la contraseña se encuentra en el archivo db_root_password.txt)
+
+```bash
+(base) rtxmsi1@rtxmsi1-MS-7E06:~/Documents/Myapp$ sudo docker exec -it Mysqldb mysql -u wordpress -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.7.44 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> 
+```
 
 
 
+### (18) Según las reglas de seguridad vistas en la presentación. Ejemplifique con una implementación, al menos 5 de ellas.
 
+A continuación, 5 **buenas prácticas de seguridad en Docker** aplicadas a este caso:
 
+1. **Uso de secretos en lugar de variables de entorno sensibles**
 
+   * Correcto:
 
+     ```yaml
+     environment:
+       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
+     secrets:
+       - db_root_password
+     ```
+   * Incorrecto:
 
+     ```yaml
+     environment:
+       MYSQL_ROOT_PASSWORD=root123
+     ```
 
+2. **Limitar los puertos expuestos**
 
+   * Solo abrir los puertos necesarios (`80`, `443`, `3306`).
+   * No exponer MySQL a internet si no es necesario:
+
+     ```yaml
+     ports:
+       - "3306:3306"   # inseguro si se expone al público
+     ```
+
+     Mejor → exponerlo solo en la red interna de Docker.
+
+3. **Usar imágenes oficiales y ligeras**
+
+   * Ejemplo: `nginx:alpine` en lugar de una imagen desconocida.
+   * Esto reduce vulnerabilidades y tamaño del contenedor.
+
+4. **Principio de menor privilegio**
+
+   * Evitar ejecutar contenedores como `root`.
+   * Ejemplo para Nginx:
+
+     ```yaml
+     user: "1000:1000"
+     ```
+
+5. **Mantener los contenedores actualizados**
+
+   * Descargar las últimas versiones estables:
+
+     ```bash
+     docker pull mysql:5.7
+     docker pull nginx:alpine
+     ```
+   * Evita vulnerabilidades conocidas en versiones antiguas.
 
