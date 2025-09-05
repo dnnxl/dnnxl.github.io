@@ -454,6 +454,9 @@ ninja.data = [{
           section: "News",},{id: "news-gave-a-seminar-on-a-computer-vision-and-deep-learning-based-system-for-multi-object-tracking-with-drones-in-precision-agriculture-at-the-colaboratorio-nacional-de-computación-avanzada-cnca-of-the-centro-nacional-de-alta-tecnología-cenat",
           title: 'Gave a seminar on “A Computer Vision and Deep Learning-Based System for Multi-Object...',
           description: "",
+          section: "News",},{id: "news-i-delivered-a-talk-on-ias-connect-2-0-organized-by-the-ieee-industrial-applications-society-in-el-salvador-titled-drone-based-video-monitoring-for-yield-estimation-using-deep-learning",
+          title: 'I delivered a talk on IAS Connect 2.0, organized by the IEEE Industrial...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
