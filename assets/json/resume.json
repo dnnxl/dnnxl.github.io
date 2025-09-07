@@ -271,16 +271,80 @@
   ],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
+      "name": "Computer Vision",
+      "level": "Advanced",
+      "icon": "fa-solid fa-eye",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Multiple Object Tracking (MOT)",
+        "Object Detection",
+        "ORB and SIFT Feature Matching",
+        "Camera Motion Compensation",
+        "Proposal Generation",
+        "Feature Embedding",
+        "Multispectral Imaging",
+        "Early & Late Fusion Strategies"
+      ]
+    },
+    {
+      "name": "Applied AI in Agriculture",
+      "level": "Advanced",
+      "icon": "fa-solid fa-leaf",
+      "keywords": [
+        "Drone-based Monitoring",
+        "Pineapple Crop Detection",
+        "Object Localization in Drone Imagery",
+        "Multispectral Data Analysis",
+        "Agricultural Computer Vision Pipelines"
+      ]
+    },
+    {
+      "name": "Machine Learning & AI",
+      "level": "Advanced",
+      "icon": "fa-solid fa-robot",
+      "keywords": [
+        "Few-shot Learning",
+        "Visual Foundation Models (VFM)",
+        "Bias & Robustness Auditing",
+        "Interpretability & Explainability",
+        "Healthcare AI Applications",
+        "Experimental Design & Evaluation"
+      ]
+    },
+    {
+      "name": "STEM Education & Outreach",
+      "level": "Intermediate",
+      "icon": "fa-solid fa-chalkboard-teacher",
+      "keywords": [
+        "AI Education Methodologies",
+        "Constructivist Learning Approaches",
+        "Arduino & Raspberry Pi",
+        "Snap Circuits for STEM Learning",
+        "Semi-Virtual & Hybrid Education Models",
+        "Workshop Design & Facilitation"
+      ]
+    },
+    {
+      "name": "Humanitarian Technology",
+      "level": "Intermediate",
+      "icon": "fa-solid fa-people-group",
+      "keywords": [
+        "Community-driven Technology",
+        "Digital Inclusion",
+        "Cultural Integration in Technology",
+        "Indigenous Technology Empowerment",
+        "Sustainable Communication Networks"
+      ]
+    },
+    {
+      "name": "Research & Professional Skills",
+      "level": "Advanced",
+      "icon": "fa-solid fa-book",
+      "keywords": [
+        "Academic Research & Publication",
+        "Cross-disciplinary Collaboration",
+        "Technical Writing",
+        "Open-source Prototyping",
+        "AI for Agriculture, Education & Healthcare"
       ]
     }
   ],
