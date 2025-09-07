@@ -367,15 +367,39 @@
   ],
   "interests": [
     {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
+      "name": "Generative AI",
+      "icon": "fa-solid fa-sparkles",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Diffusion Models",
+        "Generative Modeling",
+        "Variational Inference",
+        "Probabilistic Modeling",
+        "Markov Chains",
+        "Uncertainty Estimation"
+      ]
+    },
+    {
+      "name": "Foundation Models",
+      "icon": "fa-solid fa-cubes",
+      "keywords": [
+        "Large Language Models (LLMs)",
+        "Visual Foundation Models (VFMs)",
+        "Few-shot Learning",
+        "Multimodal Learning",
+        "Representation Learning",
+        "Model Interpretability"
+      ]
+    },
+    {
+      "name": "Applied AI Research",
+      "icon": "fa-solid fa-flask",
+      "keywords": [
+        "AI for Agriculture",
+        "AI for Healthcare",
+        "STEM Education with AI",
+        "Humanitarian Technology",
+        "Bias & Robustness Auditing",
+        "Scalable AI for Data-scarce Environments"
       ]
     }
   ],
