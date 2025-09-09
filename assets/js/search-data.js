@@ -457,6 +457,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-delivered-a-talk-on-ias-connect-2-0-organized-by-the-ieee-industrial-applications-society-in-el-salvador-titled-drone-based-video-monitoring-for-yield-estimation-using-deep-learning",
           title: 'I delivered a talk on IAS Connect 2.0, organized by the IEEE Industrial...',
           description: "",
+          section: "News",},{id: "news-our-work-has-been-accepted-at-the-international-conference-of-the-chilean-computer-science-society-in-valparaíso-chile-titled-tracking-through-words-a-novel-framework-for-data-association-in-tracking-by-detection-using-large-language-models-for-oral-presentation",
+          title: 'Our work has been accepted at the International Conference of the Chilean Computer...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
