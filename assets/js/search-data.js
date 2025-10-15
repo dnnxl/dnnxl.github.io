@@ -460,6 +460,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-work-has-been-accepted-at-the-international-conference-of-the-chilean-computer-science-society-in-valparaíso-chile-titled-tracking-through-words-a-novel-framework-for-data-association-in-tracking-by-detection-using-large-language-models-for-oral-presentation",
           title: 'Our work has been accepted at the International Conference of the Chilean Computer...',
           description: "",
+          section: "News",},{id: "news-our-work-has-been-accepted-at-the-7th-ieee-international-conference-on-bioinspired-processing-in-universidad-nacional-campus-pérez-zeledón-costa-rica-titled-learning-compact-representations-of-agricultural-fields-a-study-of-variational-autoencoders-variants-for-aerial-drone-imagery-for-oral-presentation",
+          title: 'Our work has been accepted at the 7th IEEE International Conference on BioInspired...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
