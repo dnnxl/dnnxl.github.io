@@ -4,6 +4,7 @@
 
 "CVPR":
   url: https://cvpr.thecvf.com/
+  color: "#572364"
 
 "BIP":
   color: "#14a631"
