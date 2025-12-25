@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "Publications",
-          description: "You can browse my work by category below (listed newest to oldest). For the most current list of citations and papers, check out my [Google Scholar](https://scholar.google.com/citations?user=vipkAKEAAAAJ&amp;hl=en&amp;authuser=3).",
+          description: "An overview of my research publications.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
