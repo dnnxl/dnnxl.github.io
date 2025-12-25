@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "Publications",
-          description: "Publications by categories in reversed chronological order.",
+          description: "You can browse my work by category below (listed newest to oldest). For the most current list of citations and papers, check out my [Google Scholar](https://scholar.google.com/citations?user=vipkAKEAAAAJ&amp;hl=en&amp;authuser=3).",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
