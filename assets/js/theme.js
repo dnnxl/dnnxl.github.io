@@ -3,13 +3,18 @@
 // Toggle through light, dark, and system theme settings.
 let toggleThemeSetting = () => {
   let themeSetting = determineThemeSetting();
-  if (themeSetting == "system") {
-    setThemeSetting("light");
-  } else if (themeSetting == "light") {
+  
+  if (themeSetting === "light") {
     setThemeSetting("dark");
+    pJSDom[0].pJS.particles.color.value = '#ffffff';
+    pJSDom[0].pJS.particles.line_linked.color = '#ffffff';
   } else {
-    setThemeSetting("system");
+    setThemeSetting("light");
+    pJSDom[0].pJS.particles.color.value = '#b71c1c';
+    pJSDom[0].pJS.particles.line_linked.color = '#b71c1c';
   }
+
+  pJSDom[0].pJS.fn.particlesRefresh();
 };
 
 // Change the theme setting and apply the theme.
