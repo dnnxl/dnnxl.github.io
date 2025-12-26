@@ -271,7 +271,7 @@ scholar:
   last_name: [Xie-Li]
   first_name: [Danny]
 
-  style: apa
+  style: ieee
   locale: en
 
   source: /_bibliography/
