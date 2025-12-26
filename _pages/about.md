@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href='#'>AI Researcher | Adventurous</a>
+subtitle: <a href='#'>Learning Patterns · Chasing Light · Walking Trails</a>
 
 profile:
   align: right
