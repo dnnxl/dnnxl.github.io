@@ -2,7 +2,7 @@
 layout: page
 title: Text Simplification in Spanish
 description: Research and collaboration on automatic text simplification
-img: assets/img/12.jpg
+img: assets/img/complex.png
 importance: 1
 category: Collaboration
 related_publications: true
