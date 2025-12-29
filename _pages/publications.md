@@ -22,7 +22,7 @@ You can browse my work by category below (listed newest to oldest). For the most
 
 <!-- Bibsearch Feature -->
 
-<!--{% include bib_search.liquid %}-->
+{% include bib_search.liquid %}
 
 <div class="publications">
 
