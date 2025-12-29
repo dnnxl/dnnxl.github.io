@@ -45,7 +45,7 @@ ninja.data = [{
             window.location.href = "/volunteering/";
           },
         },{id: "nav-projects",
-          title: "projects",
+          title: "Projects",
           description: "A growing collection of your cool projects.",
           section: "Navigation",
           handler: () => {
@@ -473,9 +473,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-work-has-been-accepted-at-the-7th-ieee-international-conference-on-bioinspired-processing-in-universidad-nacional-campus-pérez-zeledón-costa-rica-titled-learning-compact-representations-of-agricultural-fields-a-study-of-variational-autoencoders-variants-for-aerial-drone-imagery-for-oral-presentation",
           title: 'Our work has been accepted at the 7th IEEE International Conference on BioInspired...',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "projects-text-simplification-in-spanish",
+          title: 'Text Simplification in Spanish',
+          description: "Research and collaboration on automatic text simplification",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-project-2",
