@@ -1432,3 +1432,26 @@ p.bibtitle {
   text-align: center;
   border-top: 1px solid var(--global-theme-color);
 }
+
+/* Publications */
+button.badge {
+  display: inline-block;
+  color: #fff !important;
+  background-color: var(--global-theme-color) !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-color: rgba(181, 9, 172, 0.05) !important;
+}
+
+button.badge.clicked {
+  color: var(--global-theme-color) !important;
+  background-color: #fff !important;
+}
+
+.biblio.hidden {
+  display: none;
+}
+
+.biblio.hidden.open {
+  display: block;
+}
