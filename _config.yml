@@ -193,6 +193,7 @@ exclude:
   - _pages/dropdown.md
   - _pages/profiles.md
   - _pages/volunteering.md
+  - _pages/articles.md
   - purgecss.config.js
   - README.md
   - readme_preview/
