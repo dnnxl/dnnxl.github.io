@@ -34,8 +34,8 @@ You can browse my work by category below (listed newest to oldest). For the most
   {% bibliography -f {{ site.scholar.bibliography }}  --query @*[cat=Conference]%}
 </div>
 
-<div id="bibliografy-workshop" class="biblio hidden">
-  {% bibliography -f {{ site.scholar.bibliography }}  --query @*[cat=Workshop]%}
+<div id="bibliografy-article" class="biblio hidden">
+  {% bibliography -f {{ site.scholar.bibliography }}  --query @*[cat=Article]%}
 </div> 
 
 <div id="bibliografy-journal" class="biblio hidden">
