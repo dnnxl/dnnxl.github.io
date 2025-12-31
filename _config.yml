@@ -151,6 +151,10 @@ collections:
     output: true
   projects:
     output: true
+  outreach:
+    defaults:
+      layout: post
+    output: true
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
