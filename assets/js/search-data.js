@@ -105,7 +105,10 @@ ninja.data = [{
           section: "News",},{id: "news-i-successfully-defended-my-master-s-thesis-object-detection-on-image-and-video-from-drone-agriculture-data-using-deep-learning-for-the-master-s-degree-in-computer-science-at-the-instituto-tecnológico-de-costa-rica-supervised-by-dr-fabián-fallas-moya-phd-the-work-received-the-highest-academic-distinction-summa-cum-laude",
           title: 'I successfully defended my Master’s thesis, “Object Detection on Image and Video from...',
           description: "",
-          section: "News",},{id: "projects-text-simplification-in-spanish",
+          section: "News",},{id: "outreach-gave-a-seminar-on-a-computer-vision-and-deep-learning-based-system-for-multi-object-tracking-with-drones-in-precision-agriculture-at-the-colaboratorio-nacional-de-computación-avanzada-cnca-of-the-centro-nacional-de-alta-tecnología-cenat",
+          title: 'Gave a seminar on “A Computer Vision and Deep Learning-Based System for Multi-Object...',
+          description: "",
+          section: "Outreach",},{id: "projects-text-simplification-in-spanish",
           title: 'Text Simplification in Spanish',
           description: "Research and collaboration on automatic text simplification",
           section: "Projects",handler: () => {
