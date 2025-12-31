@@ -59,17 +59,17 @@ $(document).ready(function () {
 });
 
 // add filter functionality to publications
-$("button#workshop").click(function () {
-  if ($("div#bibliografy-workshop").hasClass("open")) {
-    $("div#bibliografy-workshop").removeClass("open");
-    $("button#workshop").removeClass("clicked");
+$("button#article").click(function () {
+  if ($("div#bibliografy-article").hasClass("open")) {
+    $("div#bibliografy-article").removeClass("open");
+    $("button#article").removeClass("clicked");
     $("div#bibliografy-full").addClass("open");
   } else {
     $("div#bibliografy-full").removeClass("open");
     $("div#bibliografy-journal").removeClass("open");
     $("div#bibliografy-conf").removeClass("open");
-    $("div#bibliografy-workshop").addClass("open");
-    $("button#workshop").toggleClass("clicked");
+    $("div#bibliografy-article").addClass("open");
+    $("button#article").toggleClass("clicked");
     $("button#journal").removeClass("clicked");
     $("button#conference").removeClass("clicked");
   }
@@ -82,11 +82,11 @@ $("button#journal").click(function () {
     $("div#bibliografy-full").addClass("open");
   } else {
     $("div#bibliografy-full").removeClass("open");
-    $("div#bibliografy-workshop").removeClass("open");
+    $("div#bibliografy-article").removeClass("open");
     $("div#bibliografy-conf").removeClass("open");
     $("div#bibliografy-journal").addClass("open");
     $("button#journal").toggleClass("clicked");
-    $("button#workshop").removeClass("clicked");
+    $("button#article").removeClass("clicked");
     $("button#conference").removeClass("clicked");
   }
 });
@@ -98,11 +98,11 @@ $("button#conference").click(function () {
     $("div#bibliografy-full").addClass("open");
   } else {
     $("div#bibliografy-full").removeClass("open");
-    $("div#bibliografy-workshop").removeClass("open");
+    $("div#bibliografy-article").removeClass("open");
     $("div#bibliografy-journal").removeClass("open");
     $("div#bibliografy-conf").addClass("open");
     $("button#conference").toggleClass("clicked");
-    $("button#workshop").removeClass("clicked");
+    $("button#article").removeClass("clicked");
     $("button#journal").removeClass("clicked");
   }
 });
