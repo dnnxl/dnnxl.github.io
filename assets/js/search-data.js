@@ -44,26 +44,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-",
+        },{id: "post-from-lab-to-lakes-an-internship-adventure-in-slovenia",
         
-          title: "",
+          title: "From Lab to Lakes: An Internship Adventure in Slovenia",
         
-        description: "",
+        description: "spring months in Slovenia — research, travel, and outdoor adventures",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/2025-31-10-Slovenia/";
-          
-        },
-      },{id: "post-a-post-with-formatting-and-links",
-        
-          title: "a post with formatting and links",
-        
-        description: "march &amp; april, looking forward to summer",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2015/formatting-and-links/";
+            window.location.href = "/blog/2025/Slovenia/";
           
         },
       },{id: "books-the-godfather",
