@@ -20,7 +20,7 @@ You can browse my work by category below (listed newest to oldest). For the most
 <!--- <button id="workshop" class="badge">Workshop</button> -->
 <button id="conference" class="badge">Conference</button>
 <button id="journal" class="badge">Journal</button>
-<button id="workshop" class="badge">Article</button>
+<button id="article" class="badge">Article</button>
 
 <div id="bibliografy-full" class="biblio hidden open">
   {% bibliography -f {{ site.scholar.bibliography }}  %}
