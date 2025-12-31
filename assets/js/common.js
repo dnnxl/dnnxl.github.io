@@ -57,3 +57,52 @@ $(document).ready(function () {
     trigger: "hover",
   });
 });
+
+// add filter functionality to publications
+$("button#workshop").click(function () {
+  if ($("div#bibliografy-workshop").hasClass("open")) {
+    $("div#bibliografy-workshop").removeClass("open");
+    $("button#workshop").removeClass("clicked");
+    $("div#bibliografy-full").addClass("open");
+  } else {
+    $("div#bibliografy-full").removeClass("open");
+    $("div#bibliografy-journal").removeClass("open");
+    $("div#bibliografy-conf").removeClass("open");
+    $("div#bibliografy-workshop").addClass("open");
+    $("button#workshop").toggleClass("clicked");
+    $("button#journal").removeClass("clicked");
+    $("button#conference").removeClass("clicked");
+  }
+});
+
+$("button#journal").click(function () {
+  if ($("div#bibliografy-journal").hasClass("open")) {
+    $("div#bibliografy-journal").removeClass("open");
+    $("button#journal").removeClass("clicked");
+    $("div#bibliografy-full").addClass("open");
+  } else {
+    $("div#bibliografy-full").removeClass("open");
+    $("div#bibliografy-workshop").removeClass("open");
+    $("div#bibliografy-conf").removeClass("open");
+    $("div#bibliografy-journal").addClass("open");
+    $("button#journal").toggleClass("clicked");
+    $("button#workshop").removeClass("clicked");
+    $("button#conference").removeClass("clicked");
+  }
+});
+
+$("button#conference").click(function () {
+  if ($("div#bibliografy-conf").hasClass("open")) {
+    $("div#bibliografy-conf").removeClass("open");
+    $("button#conference").removeClass("clicked");
+    $("div#bibliografy-full").addClass("open");
+  } else {
+    $("div#bibliografy-full").removeClass("open");
+    $("div#bibliografy-workshop").removeClass("open");
+    $("div#bibliografy-journal").removeClass("open");
+    $("div#bibliografy-conf").addClass("open");
+    $("button#conference").toggleClass("clicked");
+    $("button#workshop").removeClass("clicked");
+    $("button#journal").removeClass("clicked");
+  }
+});
