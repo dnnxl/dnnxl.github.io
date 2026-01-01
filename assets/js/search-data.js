@@ -48,7 +48,7 @@ ninja.data = [{
         
           title: "From Lab to Lakes: An Internship Adventure in Slovenia",
         
-        description: "spring months in Slovenia — research, travel, and outdoor adventures",
+        description: "Spring months in Slovenia",
         section: "Posts",
         handler: () => {
           
