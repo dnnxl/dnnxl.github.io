@@ -15,13 +15,13 @@ categories:
   - research
 ---
 
-# What are Graphs?
+## What are Graphs?
 
 Graphs are a very common way to describe **complex systems**. At their core, a graph is just a set of objects, called **nodes**, and the connections between them, called **edges**.
 
-## Examples
+#### Examples
 - **Social networks:** nodes represent people, and edges represent friendships between them.
 - **Biology:** nodes may represent proteins, while edges describe how these proteins interact with each other.
 
-## Why Graphs?
+### Why Graphs?
 Unlike **tabular** or **grid-based data** (such as images or text), graphs explicitly encode **relationships** and **structure**, making them well suited for modeling connected and relational data.
