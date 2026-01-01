@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-from-lab-to-lakes-an-internship-adventure-in-slovenia",
+        },{id: "post-my-notes-of-graph-machine-learning",
+        
+          title: "My notes of Graph Machine Learning",
+        
+        description: "Personal study notes and insights on Graph Machine Learning, covering core concepts, models, and practical considerations for learning on graph-structured data.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Graph_Machine_Learning/";
+          
+        },
+      },{id: "post-from-lab-to-lakes-an-internship-adventure-in-slovenia",
         
           title: "From Lab to Lakes: An Internship Adventure in Slovenia",
         
