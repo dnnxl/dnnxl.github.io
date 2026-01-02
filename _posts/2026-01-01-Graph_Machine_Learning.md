@@ -17,66 +17,84 @@ categories:
 
 ## What Are Graphs?
 
-Graphs are a powerful and widely used mathematical structure for representing **complex systems**. At their core, a graph consists of a set of entities, called **nodes** (or vertices), and the **edges** that define the relationships between them. Unlike representations that focus primarily on individual entities, graphs emphasize the **interactions and dependencies** among elements. This relational perspective, combined with their expressive generality, makes graphs an especially versatile modeling tool.
+Graphs are a fundamental mathematical structure for representing **complex systems**. At their core, a graph is composed of a set of entities, called **nodes** (or *vertices*), and a set of **edges** that encode relationships between them. Unlike representations that focus solely on individual entities, graphs explicitly model the **interactions, dependencies, and structure** of a system.
+
+This relational viewpoint, combined with their expressive power, makes graphs a highly versatile tool across many domains.
 
 #### Examples
-- **Social networks:** Nodes represent individuals, while edges capture social relationships such as friendships or interactions.
-- **Biology:** Nodes may correspond to proteins, and edges describe biochemical or functional interactions between them.
+- **Social networks:** Nodes represent individuals, and edges denote relationships such as friendships or interactions.
+- **Biology:** Nodes may correspond to proteins, while edges represent biochemical or functional interactions.
 
-### Why Graphs?
+---
 
-Unlike **tabular** data or **grid-structured** data (e.g., images or text), graphs explicitly encode both **structure** and **relationships**. This makes them particularly well suited for modeling systems where connectivity and interdependence play a central role, such as networks, molecules, knowledge bases, and communication systems.
+## Why Graphs?
+
+Unlike **tabular data** or **grid-structured data** (e.g., images or text), graphs naturally encode both **entities and their relationships**. This makes them particularly well suited for domains where connectivity and interdependence are central, including:
+- social and communication networks,
+- molecular and biological systems,
+- knowledge graphs,
+- transportation and infrastructure networks.
+
+---
 
 ## What Is a Graph?
 
-Before exploring machine learning techniques on graphs, it is useful to formalize what we mean by **graph-structured data**.
+Before applying machine learning techniques to graph-structured data, we first introduce a formal definition.
 
 ### Formal Definition
 
-A graph is formally defined as  
-\[
+A graph is defined as  
+\begin{equation}
 G = (V, E),
-\]
+\end{equation}
 where:
-- \(V\) denotes a set of **nodes** (vertices), and  
-- \(E\) denotes a set of **edges** representing connections between pairs of nodes.
+- $$\(V = \{v_1, v_2, \dots, v_n\}\)$$ is a finite set of **nodes** (vertices), and  
+- $$\(E \subseteq V \times V\)$$ is a set of **edges**, representing relationships between nodes.
 
-An edge connecting node \(u \in V\) to node \(v \in V\) is written as \((u, v) \in E\).
+An edge connecting nodes $$\(u, v \in V\)$$ is denoted by $$\((u, v) \in E\)$$.
 
-In many applications, we focus on **simple graphs**, which satisfy the following conditions:
-- There is at most one edge between any pair of nodes.
-- Self-loops (edges from a node to itself) are not allowed.
-- All edges are **undirected**, meaning:
-  \[
+In this README, we primarily consider **simple, undirected graphs**, which satisfy:
+- At most one edge exists between any pair of nodes.
+- Self-loops (edges of the form $$\((u, u)\)$$) are not allowed.
+- Edges are **undirected**, meaning:
+  \begin{equation}
   (u, v) \in E \iff (v, u) \in E.
-  \]
+  \end{equation}
 
-### Adjacency Matrix Representation
+---
 
-One common and convenient way to represent a graph is through an **adjacency matrix**
-\[
+## Adjacency Matrix Representation
+
+A common and convenient representation of a graph is the **adjacency matrix**
+\begin{equation}
 A \in \mathbb{R}^{|V| \times |V|}.
-\]
+\end{equation}
 
-The construction of this matrix proceeds as follows:
-1. Assign each node a unique index corresponding to a row and column.
-2. Define the entries of the matrix as:
-   \[
-   A[u, v] =
+To construct the adjacency matrix:
+1. Assign each node $$\(v_i \in V\)$$ a unique index $$\(i \in \{1, \dots, |V|\}\)$$.
+2. Define the matrix entries as:
+   \begin{equation}
+   A_{uv} =
    \begin{cases}
-   1 & \text{if } (u, v) \in E, \\
-   0 & \text{otherwise}.
+   1, & \text{if } (u, v) \in E, \\
+   0, & \text{otherwise}.
    \end{cases}
-   \]
+   \end{equation}
 
-- For **undirected graphs**, the adjacency matrix \(A\) is **symmetric**.
-- For **directed graphs**, symmetry is not required, as edge directionality is preserved.
+Key properties:
+- For **undirected graphs**, the adjacency matrix is **symmetric**:
+  \begin{equation}
+  A_{uv} = A_{vu}.
+  \end{equation}
+- For **directed graphs**, symmetry is not required, as edge direction is preserved.
 
-### Weighted Graphs
+---
 
-In many real-world scenarios, edges carry additional information in the form of **weights**, reflecting the strength, cost, or capacity of a connection. In such cases, the adjacency matrix entries take real values:
-\[
-A[u, v] \in \mathbb{R}.
-\]
+## Weighted Graphs
 
-For instance, in a **protein–protein interaction network**, edge weights may quantify the strength or confidence of interaction between two proteins.
+In many real-world applications, edges carry additional information in the form of **weights**, which may represent strength, cost, similarity, or capacity. In this case, the adjacency matrix becomes:
+\begin{equation}
+A_{uv} \in \mathbb{R}.
+\end{equation}
+
+For example, in a **protein–protein interaction network**, an edge weight may encode the confidence or intensity of interaction between two proteins, rather than a simple binary connection.
