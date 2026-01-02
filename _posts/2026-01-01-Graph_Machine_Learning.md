@@ -48,14 +48,14 @@ A graph is defined as
 G = (V, E),
 \end{equation}
 where:
-- $$\(V = \{v_1, v_2, \dots, v_n\}\)$$ is a finite set of **nodes** (vertices), and  
-- $$\(E \subseteq V \times V\)$$ is a set of **edges**, representing relationships between nodes.
+- $$(V = \{v_1, v_2, \dots, v_n\})$$ is a finite set of **nodes** (vertices), and  
+- $$(E \subseteq V \times V)$$ is a set of **edges**, representing relationships between nodes.
 
-An edge connecting nodes $$\(u, v \in V\)$$ is denoted by $$\((u, v) \in E\)$$.
+An edge connecting nodes $$(u, v \in V)$$ is denoted by $$((u, v) \in E)$$.
 
 In this README, we primarily consider **simple, undirected graphs**, which satisfy:
 - At most one edge exists between any pair of nodes.
-- Self-loops (edges of the form $$\((u, u)\)$$) are not allowed.
+- Self-loops (edges of the form $$(u, u)$$) are not allowed.
 - Edges are **undirected**, meaning:
   \begin{equation}
   (u, v) \in E \iff (v, u) \in E.
@@ -71,7 +71,7 @@ A \in \mathbb{R}^{|V| \times |V|}.
 \end{equation}
 
 To construct the adjacency matrix:
-1. Assign each node $$\(v_i \in V\)$$ a unique index $$\(i \in \{1, \dots, |V|\}\)$$.
+1. Assign each node $$(v_i \in V)$$ a unique index $$(i \in \{1, \dots, |V|\})$$.
 2. Define the matrix entries as:
    \begin{equation}
    A_{uv} =
