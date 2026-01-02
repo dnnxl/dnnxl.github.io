@@ -13,11 +13,26 @@ tags:
 categories:
   - notes
   - research
+thumbnail: assets/img/post/graph_machine_learning/graph_diagram_example.png
 ---
 
 ## What Are Graphs?
 
 Graphs are a fundamental mathematical structure for representing **complex systems**. At their core, a graph is composed of a set of entities, called **nodes** (or *vertices*), and a set of **edges** that encode relationships between them. Unlike representations that focus solely on individual entities, graphs explicitly model the **interactions, dependencies, and structure** of a system.
+
+<div class="row mt-3">
+  <div class="col-12 mt-3 mt-md-0">
+    {% include figure.liquid 
+      loading="eager" 
+      path="assets/img/post/graph_machine_learning/graph_diagram_example.png" 
+      class="img-fluid rounded z-depth-1" 
+      zoomable=true 
+    %}
+  </div>
+</div>
+<div class="caption">
+    Graph with vertices and nodes components.
+</div>
 
 This relational viewpoint, combined with their expressive power, makes graphs a highly versatile tool across many domains.
 
