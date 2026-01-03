@@ -24,7 +24,7 @@ Definition: Graphs are a fundamental mathematical structure for representing **c
   <div class="col-12 mt-3 mt-md-0">
     {% include figure.liquid 
       loading="eager" 
-      path="assets/img/post/graph_machine_learning/graph_diagram_example.png" 
+      path="assets/img/post/graph_machine_learning/bipartite_graph.png" 
       class="img-fluid rounded z-depth-1" 
       zoomable=true 
     %}
@@ -36,7 +36,7 @@ Definition: Graphs are a fundamental mathematical structure for representing **c
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0 text-center">
-        {% include figure.liquid loading="eager" path="assets/img/post/graph_machine_learning/bipartite_graph.png" class="img-fluid rounded z-depth-1" zoomable=true  %}
+        {% include figure.liquid loading="eager" path="assets/img/post/graph_machine_learning/graph_diagram_example.png" class="img-fluid rounded z-depth-1" zoomable=true  %}
         <div class="caption mt-2">
             Graph Vertices and Nodes
         </div>
