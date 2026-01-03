@@ -33,23 +33,24 @@ Definition: Graphs are a fundamental mathematical structure for representing **c
 <div class="caption">
     Graph with vertices and nodes components.
 </div>
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0 text-center">
-        {% include figure.liquid loading="eager" path="assets/img/post/graph_machine_learning/bipartite_graph.png" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/post/graph_machine_learning/bipartite_graph.png" class="img-fluid rounded z-depth-1" zoomable=true  %}
         <div class="caption mt-2">
             Graph Vertices and Nodes
         </div>
     </div>
 
     <div class="col-sm mt-3 mt-md-0 text-center">
-        {% include figure.liquid loading="eager" path="assets/img/post/graph_machine_learning/graph_labels.png" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/post/graph_machine_learning/graph_labels.png" class="img-fluid rounded z-depth-1" zoomable=true  %}
         <div class="caption mt-2">
             Graph edges and features labels
         </div>
     </div>
 
     <div class="col-sm mt-3 mt-md-0 text-center">
-        {% include figure.liquid loading="eager" path="assets/img/post/graph_machine_learning/subgraphs.png" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/post/graph_machine_learning/subgraphs.png" class="img-fluid rounded z-depth-1" zoomable=true  %}
         <div class="caption mt-2">
             Subgraphs
         </div>
