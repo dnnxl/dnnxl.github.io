@@ -113,3 +113,95 @@ A_{uv} \in \mathbb{R}.
 \end{equation}
 
 For example, in a **protein–protein interaction network**, an edge weight may encode the confidence or intensity of interaction between two proteins, rather than a simple binary connection.
+
+# Multi-Relational Graphs
+
+Graphs are powerful structures for representing complex systems. Beyond the classical distinction between **undirected**, **directed**, and **weighted** graphs, many real-world problems require modeling **multiple types of relationships** between nodes. These are known as **multi-relational graphs**.
+
+---
+
+## 📌 What Are Multi-Relational Graphs?
+
+In multi-relational graphs, edges are associated with **relation types**. Instead of representing an edge simply as a pair of nodes \((u, v)\), we extend the notation to:
+
+\[
+(u, \tau, v) \in E
+\]
+
+where:
+- \(u, v \in V\) are nodes,
+- \(\tau \in R\) is a relation (or edge) type,
+- \(R\) is the set of all relation types.
+
+Each relation type \(\tau\) can be represented by its own **adjacency matrix** \(A_\tau\). Collectively, the entire graph can be represented as an **adjacency tensor**:
+
+\[
+A \in \mathbb{R}^{|V| \times |R| \times |V|}
+\]
+
+This representation allows us to model rich relational structures, such as different types of interactions between the same entities.
+
+---
+
+## 🧬 Example: Drug–Drug Interaction Graphs
+
+In biomedical applications, nodes may represent **drugs**, and edges may represent different **side effects** that occur when two drugs are taken together. Each side effect corresponds to a different relation type, making this a natural example of a multi-relational graph.
+
+---
+
+## 🧩 Types of Multi-Relational Graphs
+
+Two important subclasses of multi-relational graphs are **heterogeneous graphs** and **multiplex graphs**.
+
+---
+
+### 🔹 Heterogeneous Graphs
+
+In **heterogeneous graphs**, nodes themselves have **types**. The node set is partitioned into disjoint subsets:
+
+\[
+V = V_1 \cup V_2 \cup \dots \cup V_k \quad \text{where } V_i \cap V_j = \varnothing \text{ for } i \neq j
+\]
+
+Edges are constrained by node types. Typically, only certain node-type combinations are allowed for a given relation type:
+
+\[
+(u, \tau_i, v) \in E \Rightarrow u \in V_j,\; v \in V_k
+\]
+
+#### Example: Biomedical Heterogeneous Graph
+- **Node types**: proteins, drugs, diseases  
+- **Edge types**:
+  - *treats*: drug → disease
+  - *polypharmacy side-effect*: drug ↔ drug
+
+#### Multipartite Graphs
+
+A special case of heterogeneous graphs where edges **only connect nodes of different types**:
+
+\[
+(u, \tau_i, v) \in E \Rightarrow u \in V_j,\; v \in V_k,\; j \neq k
+\]
+
+---
+
+### 🔹 Multiplex Graphs
+
+In **multiplex graphs**, the graph is decomposed into **multiple layers**, each corresponding to a different relation type.
+
+Key assumptions:
+- Every node exists in **every layer**
+- Each layer represents **one intra-layer relation**
+- **Inter-layer edges** may connect the same node across layers
+
+#### Example: Transportation Network
+- **Nodes**: cities  
+- **Layers**:
+  - Air transportation
+  - Train transportation
+- **Intra-layer edges**: connections between cities using the same mode
+- **Inter-layer edges**: switching transportation modes within the same city
+
+Multiplex graphs are particularly useful for modeling **multi-modal systems** where entities participate simultaneously in multiple types of interactions.
+
+---
