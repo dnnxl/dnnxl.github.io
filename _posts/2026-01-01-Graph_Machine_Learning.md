@@ -150,14 +150,14 @@ Citation networks, where one paper cites another.
     <div class="col-sm mt-3 mt-md-0 text-center">
         {% include figure.liquid loading="eager" path="assets/img/post/graph_machine_learning/undirected_graph.png" class="img-fluid rounded z-depth-1" %}
         <div class="caption mt-2">
-            Caption for image 9
+            Undirected Graph
         </div>
     </div>
 
     <div class="col-sm mt-3 mt-md-0 text-center">
         {% include figure.liquid loading="eager" path="assets/img/post/graph_machine_learning/directed_graph.png" class="img-fluid rounded z-depth-1" %}
         <div class="caption mt-2">
-            Caption for image 7
+            Directed Graph
         </div>
     </div>
 </div>
