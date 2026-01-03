@@ -105,6 +105,87 @@ Key properties:
 
 ---
 
+## 📌 Basic Graph Types
+
+Before introducing multi-relational graphs, it is useful to review the most common graph types.
+
+---
+
+### 🔹 Undirected Graphs
+
+In **undirected graphs**, edges have no orientation. The relationship between two nodes is **bidirectional**, meaning that if node \(u\) is connected to node \(v\), then \(v\) is also connected to \(u\).
+
+\[
+(u, v) \in E \iff (v, u) \in E
+\]
+
+**Characteristics:**
+- No direction associated with edges
+- Adjacency matrix is symmetric
+- Common in social or physical interaction networks
+
+**Example:**  
+Friendship networks, where friendship is mutual.
+
+---
+
+### 🔹 Directed Graphs
+
+In **directed graphs** (also called *digraphs*), edges have a direction. An edge from node \(u\) to node \(v\) does not imply the existence of an edge from \(v\) to \(u\).
+
+\[
+(u, v) \in E \;\;\not\Rightarrow\;\; (v, u) \in E
+\]
+
+**Characteristics:**
+- Edges have direction
+- Adjacency matrix is not necessarily symmetric
+- Captures asymmetric relationships
+
+**Example:**  
+Citation networks, where one paper cites another.
+
+---
+
+### 🔹 Weighted Graphs
+
+In **weighted graphs**, each edge is associated with a numerical value (weight) that represents the **strength**, **cost**, or **capacity** of the connection.
+
+\[
+(u, v, w) \in E,\quad w \in \mathbb{R}
+\]
+
+**Characteristics:**
+- Edge weights encode quantitative information
+- Can be combined with directed or undirected graphs
+- Adjacency matrix stores weights instead of binary values
+
+**Example:**  
+Road networks, where weights represent distances or travel times.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Weighted Graphs
 
 In many real-world applications, edges carry additional information in the form of **weights**, which may represent strength, cost, similarity, or capacity. In this case, the adjacency matrix becomes:
