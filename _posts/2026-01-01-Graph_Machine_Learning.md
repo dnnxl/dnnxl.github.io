@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My notes of Graph Machine Learning"
+title: "Introduction to Graphs"
 date: 2026-01-01 16:40:16
 description: Personal study notes and insights on Graph Machine Learning, covering core concepts, models, and practical considerations for learning on graph-structured data.
 tags:
