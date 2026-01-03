@@ -14,7 +14,14 @@ categories:
   - notes
   - research
 thumbnail: assets/img/post/graph_machine_learning/graph_diagram_example.png
+toc:
+  beginning: true
 ---
+
+```yml
+toc:
+  beginning: true
+```
 
 ## What Are Graphs?
 
