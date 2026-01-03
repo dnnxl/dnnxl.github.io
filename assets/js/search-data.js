@@ -44,9 +44,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-my-notes-of-graph-machine-learning",
+        },{id: "post-introduction-to-graphs",
         
-          title: "My notes of Graph Machine Learning",
+          title: "Introduction to Graphs",
         
         description: "Personal study notes and insights on Graph Machine Learning, covering core concepts, models, and practical considerations for learning on graph-structured data.",
         section: "Posts",
