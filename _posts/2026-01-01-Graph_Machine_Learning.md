@@ -206,9 +206,9 @@ Citation networks, where one paper cites another.
 
 In **weighted graphs**, each edge is associated with a numerical value (weight) that represents the **strength**, **cost**, or **capacity** of the connection.
 
-\[
+$$
 (u, v, w) \in E,\quad w \in \mathbb{R}
-\]
+$$
 
 **Characteristics:**
 - Edge weights encode quantitative information
@@ -223,22 +223,22 @@ Road networks, where weights represent distances or travel times.
 
 ### Bipartite Graph
 
-A **bipartite graph** is a graph whose set of vertices can be divided into **two disjoint sets** \(V_1\) and \(V_2\) such that:
+A **bipartite graph** is a graph whose set of vertices can be divided into **two disjoint sets** $(V_1\)$ and \(V_2\) such that:
 
 - Every edge connects a vertex in \(V_1\) to a vertex in \(V_2\)
 - No edge exists between vertices within the same set
 
 Formally, a graph \(G = (V, E)\) is bipartite if:
 
-\[
+$$
 V = V_1 \cup V_2,\quad V_1 \cap V_2 = \varnothing
-\]
+$$
 
 and for every edge \((u, v) \in E\):
 
-\[
+$$
 u \in V_1,\ v \in V_2 \quad \text{or} \quad u \in V_2,\ v \in V_1
-\]
+$$
 
 ### Key Properties
 - Bipartite graphs contain **no odd-length cycles**
