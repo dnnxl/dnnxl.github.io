@@ -221,6 +221,38 @@ Road networks, where weights represent distances or travel times.
 ---
 
 
+### Bipartite Graph
+
+A **bipartite graph** is a graph whose set of vertices can be divided into **two disjoint sets** \(V_1\) and \(V_2\) such that:
+
+- Every edge connects a vertex in \(V_1\) to a vertex in \(V_2\)
+- No edge exists between vertices within the same set
+
+Formally, a graph \(G = (V, E)\) is bipartite if:
+
+\[
+V = V_1 \cup V_2,\quad V_1 \cap V_2 = \varnothing
+\]
+
+and for every edge \((u, v) \in E\):
+
+\[
+u \in V_1,\ v \in V_2 \quad \text{or} \quad u \in V_2,\ v \in V_1
+\]
+
+### Key Properties
+- Bipartite graphs contain **no odd-length cycles**
+- They are **2-colorable**, meaning vertices can be colored using two colors so that no adjacent vertices share the same color
+- Commonly used to model relationships between two different types of entities
+
+### Examples
+- **Trees** are always bipartite
+- **Complete bipartite graphs** are denoted \(K_{m,n}\), where every vertex in one set is connected to every vertex in the other set
+
+### Applications
+- User–item graphs in recommendation systems
+- Student–course assignment problems
+- Matching problems (e.g., maximum bipartite matching)
 
 
 
